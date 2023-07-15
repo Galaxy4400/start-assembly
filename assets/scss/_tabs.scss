@@ -1,0 +1,27 @@
+._tabs {
+	--spoller-time: 0.3s;
+	&._loading {
+		._tabs-button {
+			cursor: progress;
+		}
+	}
+	._tabs-controls {
+		._tabs-button {
+		}
+	}
+	._tabs-container {
+		._tabs-panel {
+			transition: all var(--spoller-time) ease-in-out;
+			display: none;
+			opacity: 0;
+			visibility: hidden;
+			&._active {
+				display: block;
+			}
+			&._animate {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}

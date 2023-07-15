@@ -1,0 +1,61 @@
+/**
+ * style.scss
+ * 
+ * Copyright (c) 2023 Moiseev Evgeny
+ * Organization: WebisGroup
+ */
+
+// Константы сетки сайта
+$containerWidth: 800;
+$containerPadding: 15;
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: $containerPadding * 2 + $containerWidth;
+$md0: $maxWidthContainer + 12;
+$md1: 1200;
+$md2: 991;
+$md3: 767;
+$md4: 479;
+
+// Основной шрифт сайта
+$fontFamily: "Arial";
+
+// Системные файлы стилей
+@import "mixins";
+@import "fonts";
+@import "icons";
+@import "null";
+
+// Стили плагинов
+@import "tabs";
+@import "modal";
+@import "swiper";
+@import "rating";
+@import "choices";
+@import "spoiler";
+@import "nouislider";
+@import "datepicker";
+@import "lightgallery";
+@import "aos";
+
+// Технические классы
+@import "technical";
+
+// Общие стили
+@import "common";
+
+// Стили форм и элементов форм
+@import "forms";
+
+// Стили отдельных элементов
+@import "elements";
+
+// Стили главных блоков
+@import "header";
+@import "footer";
+@import "home";
+@import "inner";
+
+// Подключение любых других дополнительных стилей
+// @import "news";
+// @import "catalog";

@@ -1,0 +1,516 @@
+/**
+ * Стили кнопок
+ */
+.btn {
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: rem(16);
+	line-height: 1;
+	padding: em(8) em(22);
+	height: em(40);
+	background: var(--color-blue);
+	color: var(--color-white) !important;
+	border-radius: em(4);
+	transition: background-color 0.3s, color 0.3s;
+	@media (any-hover: hover) {
+		&:hover {
+			background: var(--color-blue-dark);
+		}
+	}
+	// .btn_fw
+	&_fw {
+		width: 100%;
+	}
+	// .btn_big
+	&_big {
+		height: em(50);
+	}
+	// .btn_logn
+	&_long {
+		min-width: em(200);
+	}
+}
+
+
+//===============================================================
+/**
+ * Стили элементов форм
+ */
+[data-switch][data-disable],
+[data-switch-rev][data-disable] {
+	display: none;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+	appearance: none;
+}
+
+
+//===============================================================
+/**
+ * Инпуты
+ */
+.input {
+	display: block;
+	width: 100%;
+	font-size: rem(16);
+	line-height: prc(20, 16);
+	padding: em(10) em(12);
+	height: em(43, 16);
+	color: var(--color-black);
+	background: var(--color-white);
+	border: rem(1) solid var(--color-gray-light);
+	border-radius: rem(4);
+	transition: border 0.3s ease 0s;
+	&:focus {
+		border: rem(1) solid var(--color-focus);
+	}
+	&._error {
+		border: rem(1) solid var(--color-error);
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23B81111'%3E%3Ccircle cx='6' cy='6' r='4.5'/%3E%3Cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3E%3Ccircle cx='6' cy='8.2' r='.6' fill='%23B81111' stroke='none'/%3E%3C/svg%3E");
+		background-position: calc(100% - rem(10)), center;
+		background-repeat: no-repeat;
+		background-size: rem(18);
+		padding-right: rem(30);
+	}
+	&._success {
+		border: rem(1) solid var(--color-success);
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E");
+		background-position: calc(100% - rem(10)), center;
+		background-repeat: no-repeat;
+		background-size: rem(18);
+		padding-right: rem(30);
+	}
+	&._mask {
+		letter-spacing: var(--mask-letter-spacing);
+	}
+}
+
+
+//===============================================================
+/**
+ * Область текста
+ */
+textarea.input {
+	resize: none;
+	padding: em(10);
+	min-height: em(60);
+}
+
+
+//===============================================================
+/**
+ * Загрузка файлов
+ */
+.input-file {
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+	padding: em(10) em(12);
+	background: var(--color-white);
+	border: rem(1) solid var(--color-gray-light);
+	border-radius: rem(4);
+	@media (max-width: ($md4+'px')) {
+		flex-direction: column-reverse;
+	}
+	&._error {
+		border: rem(1) solid var(--color-error);
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23B81111'%3E%3Ccircle cx='6' cy='6' r='4.5'/%3E%3Cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3E%3Ccircle cx='6' cy='8.2' r='.6' fill='%23B81111' stroke='none'/%3E%3C/svg%3E");
+		background-position: calc(100% - rem(10)), center;
+		background-repeat: no-repeat;
+		background-size: rem(18);
+	}
+	&._success {
+		border: rem(1) solid var(--color-success);
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E");
+		background-position: calc(100% - rem(10)), center;
+		background-repeat: no-repeat;
+		background-size: rem(18);
+	}
+	// .input-file__text
+	&__text {
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+		overflow: hidden;
+		padding: em(3) em(10);
+		margin: 0px rem(20) 0px 0px;
+		color: var(--color-darker);
+		flex: 1 1 auto;
+		@media (max-width: em($md4)) {
+			white-space: normal;
+		}
+	}
+	// .input-file__btn
+	&__btn {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		white-space: nowrap;
+		font-size: rem(16);
+		line-height: 1;
+		padding: em(8) em(22);
+		height: em(40, 16);
+		background: var(--color-white);
+		color: var(--color-blue);
+		border: rem(1) solid var(--color-blue);
+		border-radius: rem(4);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-blue);
+				color: var(--color-white);
+			}
+		}
+	}
+	// .input-file__error
+	&__error {
+		flex: 0 1 100%;
+	}
+	input {
+		position: absolute;
+		display: block;
+		z-index: -1;
+		opacity: 0;
+		width: 0;
+		height: 0;
+		&:focus + .input-file__btn {
+		}
+		.input-file &:disabled + .input-file__btn {
+			background-color: var(--color-gray-lightest);
+		}
+	}
+}
+
+
+//===============================================================
+/**
+ * Чекбоксы
+ */
+.check {
+	cursor: pointer;
+	position: relative;
+
+	// .check__mark
+	&__mark {
+	}
+
+	// .check_default
+	&_default {
+		padding: 0px 0px 0px rem(30);
+		.check__mark {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				top: em(-2);
+				left: em(-30);
+				width: em(20);
+				height: em(20);
+				background: var(--color-white);
+				border: rem(1) solid var(--color-gray-light);
+				border-radius: rem(4);
+				transition: all 0.3s ease 0s;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: em(0);
+				left: em(-23);
+				width: em(7);
+				height: em(12);
+				border-width: 0 em(2) em(2) 0;
+				border-color: var(--color-white);
+				border-style: solid;
+				display: block;
+				opacity: 0;
+				transform: rotate(45deg);
+			}
+		}
+		&._checked {
+			.check__mark::before {
+				background: var(--color-blue);
+				border: rem(1) solid var(--color-blue);
+			}
+			.check__mark::after {
+				opacity: 1;
+			}
+		}
+		&._error {
+			.check__mark::before {
+				border: rem(1) solid var(--color-error);
+			}
+		}
+		&._success {
+			.check__mark::before {
+			}
+		}
+	}
+
+	// .check_custom
+	&_custom {
+	}
+
+	// .check__input
+	input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+}
+
+
+//===============================================================
+/**
+ * Радиокнопки
+ */
+.radio {
+	cursor: pointer;
+	position: relative;
+
+	// .radio__mark
+	&__mark {
+	}
+
+	// .radio_default
+	&_default {
+		padding: 0px 0px 0px rem(30);
+		.radio__mark {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				top: em(-2);
+				left: em(-30);
+				width: em(20);
+				height: em(20);
+				border-radius: 50%;
+				border: rem(1) solid var(--color-gray-light);
+				background: var(--color-white);
+				transition: all 0.3s ease 0s;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: em(2);
+				left: em(-26);
+				width: em(12);
+				height: em(12);
+				border-radius: 50%;
+				background: var(--color-blue);
+				transition: all 0.3s ease 0s;
+				transform: scale(0);
+				opacity: 0;
+			}
+		}
+		&._checked {
+			.radio__mark::after {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+		&._error {
+			.radio__mark::before {
+				border: 1px solid var(--color-error);
+			}
+		}
+		&._success {
+			.radio__mark::before {
+			}
+		}
+	}
+
+	// .radio_custom
+	&_custom {
+	}
+
+	input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+}
+
+
+//===============================================================
+/**
+ * Числовой инпут с кастомными кнопками
+ */
+.quantity {
+	display: inline-flex;
+	width: em(88);
+	height: em(43);
+	border: rem(1) solid var(--color-gray-light);
+	border-radius: rem(4);
+	// .quantity__button
+	&__button {
+		background: var(--color-white);
+		border-radius: rem(4);
+		flex: 0 0 em(30);
+		position: relative;
+		cursor: pointer;
+		.quantity._readonly & {
+			cursor: default;
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transition: all 0.3s ease 0s;
+			margin: 0px 0px 0px em(-4.5);
+			background-color: var(--color-shadow-lighter);
+			width: em(9);
+			height: 1px;
+		}
+		@media (min-width: ($md2+1+'px')) {
+			&:hover {
+				&::before,
+				&::after {
+					background-color: var(--color-darker);
+				}
+			}
+		}
+		// .quantity__button_plus
+		&_plus {
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		// .quantity__button_minus
+		&_minus {
+		}
+	}
+	// .quantity__input
+	&__input {
+		flex: 1 1 auto;
+		input {
+			height: 100%;
+			color: var(--color-shadow-lighter);
+			width: 100%;
+			text-align: center;
+			appearance: 'textfield';
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				appearance: none;
+				margin: 0;
+			}
+			&:focus {
+				color: var(--color-black);
+			}
+		}
+	}
+}
+
+
+//===============================================================
+/**
+ * Диапазон
+ */
+.range {
+	display: grid;
+	grid-gap: rem(10);
+	// .range__inputs
+	&__inputs {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .range__input
+	&__input {
+	}
+	// .range__slider
+	&__slider {
+	}
+	// .range__labels
+	&__labels {
+	}
+}
+
+
+//===============================================================
+/**
+ * Основные стили форм
+ */
+.form {
+	display: grid;
+	grid-gap: rem(22) rem(32);
+	span.form__label-title {
+		display: inline-block;
+	}
+	// .form__row
+	&__row {
+		display: grid;
+		grid-gap: rem(16) rem(32);
+		min-width: 0;
+		// .form__row_1
+		&_1 {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		// .form__row_2
+		&_2 {
+			grid-template-columns: repeat(2, 1fr);
+			@media (max-width: em($md3)) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+		// .form__row_3
+		&_3 {
+			grid-template-columns: repeat(3, 1fr);
+			@media (max-width: em($md3)) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+	}
+	// .form__column
+	&__column {
+		min-width: 0;
+	}
+	// .form__single
+	&__single {
+		padding: rem(5) 0px 0px 0px;
+	}
+	// .form__group
+	&__group {
+		padding: rem(5) 0px 0px 0px;
+		display: grid;
+		justify-items: start;
+		grid-gap: rem(16);
+	}
+	// .form__label
+	&__label {
+	}
+	// .form__label-title
+	&__label-title {
+		cursor: pointer;
+		margin: 0px 0px em(5) 0px;
+	}
+	&__error-label {
+		font-size: rem(14);
+		font-style: italic;
+		color: var(--color-error);
+	}
+
+	//===============================================================
+
+	/**
+	 * Кастомные стили форм
+	 */
+	// .form_custom
+	&_custom {
+		// ...
+	}
+}
+

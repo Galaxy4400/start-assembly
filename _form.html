@@ -1,0 +1,270 @@
+<form class="form" action="#" data-form data-autocomplete-off>
+	<div class="form__row form__row_2">
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Обязательное текстовое поле</span>
+				<input class="input" type="text" name="Name" data-required data-min="3" data-max="20" placeholder="Введите ваше имя">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Обязательное поле даты с датапикером</span>
+				<input class="form__input input" type="text" name="Birthday" data-date data-required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг" placeholder="Укажите вашу дату рождения">
+			</label>
+		</div>
+	</div>
+	<div class="form__row form__row_2">
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Обязательное поле телефона с маской</span>
+				<input class="form__input input" type="tel" name="Phone" data-required data-mask="+7 (999) 999-9999" data-mask-placeholder="_" data-mask-between="2" placeholder="Укажите ваш телефон">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Обязательное поле почты</span>
+				<input class="form__input input" type="email" name="Email" data-required placeholder="Введите вашу почту">
+			</label>
+		</div>
+	</div>
+	<div class="form__row form__row_2">
+		<div class="form__column">
+			<div class="form__label-title">Радиокнопки с переключателями (Кто вы?)</div>
+			<div class="form__group">
+				<input type="radio" name="Persone" value="1" data-radio data-label="Ребёнок" checked>
+				<input type="radio" name="Persone" value="2" data-radio data-label="Женщина" data-switcher="pregnant">
+				<input type="radio" name="Persone" value="3" data-radio data-label="Мужчина" data-switcher="lgbt">
+			</div>
+		</div>
+		<div class="form__column" data-switch="pregnant">
+			<div class="form__label-title">Поле, привязанное к радиокнопке - женщина (Вы беременны?)</div>
+			<div class="form__single">
+				<input type="checkbox" name="Pregnant" value="1" data-required data-check data-label="Да">
+			</div>
+		</div>
+		<div class="form__column" data-switch="lgbt">
+			<div class="form__label-title">Поле, привязанное к радиокнопке - мужчина (Ты часом не пидор?)</div>
+			<div class="form__single">
+				<input type="checkbox" name="lgbt" value="1" data-required data-check data-label="Я не пидор!">
+			</div>
+		</div>
+	</div>
+	<div class="form__column" data-switch-rev="qtys">
+		<div class="form__label-title">Кастомные числовые инпуты с элементами управления</div>
+		<div class="form__qtys form-qtys">
+			<div class="form-qtys__item">
+				<div class="form-qtys__label-title">Любое число</div>
+				<input type="number" name="qty100" value="0" data-qty>
+			</div>
+			<div class="form-qtys__item">
+				<div class="form-qtys__label-title">От 100 до 500</div>
+				<input type="number" name="qty500" value="100" data-qty min="100" max="500">
+			</div>
+			<div class="form-qtys__item">
+				<div class="form-qtys__label-title">Шаг 10</div>
+				<input type="number" name="qty1000" value="500" data-qty step="10">
+			</div>
+		</div>
+	</div>
+	<div class="form__column">
+		<input type="checkbox" name="NoQtys" value="1" data-check data-switcher="qtys" data-label="Реверсивный переключатель (Скрыть блок с количественными инпутами)">
+	</div>
+	<div class="form__column">
+		<div class="form__label-title">Кастомный селектор</div>
+		<select name="Animals" data-required data-choice data-search data-placeholder="Поиск животного">
+			<option value="">Выберите животное</option>
+			<option value="1">Кошка</option>
+			<option value="2">Собака</option>
+			<option value="3">Хомяк</option>
+			<option value="4">Попугай</option>
+			<option value="5">Паук</option>
+			<option value="6">Рыбка</option>
+		</select>
+	</div>
+	<div class="form__column">
+		<div class="form__label-title">Кастомный мультиселектор</div>
+		<select name="Сities" multiple data-choice data-search data-placeholder="Поиск города">
+			<option value="">Выберите город</option>
+			<optgroup label="Англия">
+				<option value="Лондон">Лондон</option>
+				<option value="Манчестер">Манчестер</option>
+				<option value="Ливерпуль">Ливерпуль</option>
+			</optgroup>
+			<optgroup label="Франция">
+				<option value="Париж">Париж</option>
+				<option value="Лион">Лион</option>
+				<option value="Марсель">Марсель</option>
+			</optgroup>
+			<optgroup label="Германия" disabled>
+				<option value="Берлин">Берлин</option>
+				<option value="Гамбург">Гамбург</option>
+				<option value="Маниш">Маниш</option>
+			</optgroup>
+			<optgroup label="Соединённые Штаты">
+				<option value="Нью Йорк">Нью Йорк</option>
+				<option value="Вашингтон" disabled>Вашингтон</option>
+				<option value="Мичиган">Мичиган</option>
+			</optgroup>
+			<optgroup label="Испания">
+				<option value="Мадрид">Мадрид</option>
+				<option value="Барселона">Барселона</option>
+				<option value="Малага">Малага</option>
+			</optgroup>
+			<optgroup label="Канада">
+				<option value="Монреаль">Монреаль</option>
+				<option value="Торонто">Торонто</option>
+				<option value="Ванкувер">Ванкувер</option>
+			</optgroup>
+		</select>
+	</div>
+	<div class="form__column">
+		<div class="form__label-title">Группа с покрайней мере одним обязательным элементом</div>
+		<div class="form__group" data-group>
+			<input type="checkbox" name="Post" value="1" data-check data-label="Я хотел бы получать новости по электронной почте">
+			<input type="checkbox" name="Post" value="2" data-check data-label="Я бы хотел получать новости по почте (дополнительно два поля)" data-switcher="address">
+			<input type="checkbox" name="Post" value="3" data-check data-label="Я хотел бы получать новости в месенджере (дополнительно одно поле)" data-switcher="social">
+		</div>
+	</div>
+	<div class="form__column" data-switch="address">
+		<label class="form__label">
+			<span class="form__label-title">Поле, привязанное к чекбоксу (Ваш адрес)</span>
+			<input class="form__input input" type="text" name="Address" data-required data-min="3" placeholder="Укажите ваш адрес">
+		</label>
+	</div>
+	<div class="form__column" data-switch="address">
+		<label class="form__label">
+			<span class="form__label-title">Поле, привязанное к чекбоксу (Ваш почтовый индекс)</span>
+			<input class="form__input input" type="text" name="Index" data-required data-min="3" data-mask="999999" data-mask-placeholder="_" data-mask-between="2" placeholder="Укажите ваш почтовый индекс">
+		</label>
+	</div>
+	<div class="form__column" data-switch="social">
+		<label class="form__label">
+			<span class="form__label-title">Поле, привязанное к чекбоксу (Ваш месенджер)</span>
+			<input class="form__input input" type="text" name="Social" data-required placeholder="Укажите ссылку на ваш месенджер">
+		</label>
+	</div>
+	<div class="form__column">
+		<label class="form__label">
+			<span class="form__label-title">Обязательное поле области текста</span>
+			<textarea class="form__input input" name="Message" data-required placeholder="Введите сообщение"></textarea>
+		</label>
+	</div>
+	<div class="form__row form__row_2">
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Обязательное поле пароля</span>
+				<input class="form__input input" type="password" name="Password" data-required data-repeat placeholder="Введите пароль" autocomplete="new-password">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Повторитель пароля</span>
+				<input class="form__input input" type="password" name="Password2" data-required data-repeater placeholder="Повторите пароль">
+			</label>
+		</div>
+	</div>
+	<div class="form__column">
+		<div class="form__label-title">Загрузите несколько файлов png/jpg/jpeg с минимальным размером 100 КБ и максимальным 4000 Кб</div>
+		<input type="file" name="File" multiple data-file data-min="1" data-max="3" data-size-min="100" data-size-max="4000" data-ext="jpeg,jpg,png">
+	</div>
+	<div class="form__column">
+		<div class="form__label-title">Кастомный селектор с переключателями</div>
+		<select name="Sliders" data-choice>
+			<option value="value-slider-1" data-switcher="switch-slider-1">Слайдер с выбором одного значения от -200 до 500</option>
+			<option value="value-slider-2" data-switcher="switch-slider-2">Слайдер с пользовательскими настройками вывода</option>
+			<option value="value-slider-3" data-switcher="switch-slider-3">Слайдер с минимальным разбросом 50 и максимальным 300</option>
+			<option value="value-slider-4" data-switcher="switch-slider-4">Слайдер со скрытым лейблом и демонстрацией тултипов</option>
+			<option value="value-slider-5" data-switcher="switch-slider-5">Слайдер со значениями в 2 знака после запятой и ограничением на концах</option>
+			<option value="value-slider-6" data-switcher="switch-slider-6">Слайдер с инпутами и шагом 10</option>
+			<option value="value-slider-7" data-switcher="switch-slider-7">Слайдер со всеми возможными настройками</option>
+		</select>
+	</div>
+	<div class="form__column">
+		<div class="form__sliders form-sliders">
+			<div class="form-sliders__item" data-switch="switch-slider-1">
+				<div class="form-sliders__label-title">Слайдер с выбором одного значения от -200 до 500</div>
+				<div data-slider="slider1" data-range="-200,500" data-start="0"></div>
+			</div>
+			<div class="form-sliders__item" data-switch="switch-slider-2">
+				<div class="form-sliders__label-title">Слайдер с выбором диапазона от -200 до 500 и с пользовательскими настройками вывода</div>
+				<div data-slider="slider2" data-range="-200,500" data-start="-50,300" data-label="Цена" data-suffix="руб."></div>
+			</div>
+			<div class="form-sliders__item" data-switch="switch-slider-3">
+				<div class="form-sliders__label-title">Слайдер с выбором диапазона от -200 до 500 с минимальным разбросом 50 и максимальным 300</div>
+				<div data-slider="slider3" data-range="-200,500" data-start="-100,200" data-between="50,300"></div>
+			</div>
+			<div class="form-sliders__item" data-switch="switch-slider-4">
+				<div class="form-sliders__label-title">Слайдер с выбором диапазона от -200 до 500 со скрытым лейблом и демонстрацией тултипов</div>
+				<div data-slider="slider4" data-range="-200,500" data-start="100,450" data-label="" data-tooltips></div>
+			</div>
+			<div class="form-sliders__item" data-switch="switch-slider-5">
+				<div class="form-sliders__label-title">Слайдер с выбором диапазона от -200 до 500 со значениями в 2 знака после запятой и ограничением на концах</div>
+				<div data-slider="slider5" data-range="-200,500" data-start="0,350" data-label="Цена" data-suffix="руб." data-fraction="2" data-padding="50"></div>
+			</div>
+			<div class="form-sliders__item" data-switch="switch-slider-6">
+				<div class="form-sliders__label-title">Слайдер с выбором диапазона от -200 до 500 c инпутами и шагом 10</div>
+				<div data-slider="slider6" data-range="-200,500" data-start="50,200" data-label="" data-step="10" data-inputs></div>
+			</div>
+			<div class="form-sliders__item" data-switch="switch-slider-7">
+				<div class="form-sliders__label-title">Слайдер со всеми возможными настройками</div>
+				<div data-slider="slider7" data-range="-200,500" data-start="-50,250" data-between="50,300" data-padding="50" data-label="Цена" data-suffix="руб." data-step="10" data-fraction="1" data-tooltips data-inputs></div>
+			</div>
+		</div>
+	</div>
+	<div class="form__column">
+		<div class="form__label-title">Полностью кастомные радиокнопки (чекбоксы)</div>
+		<div class="form__delivery delivery">
+			<div class="delivery__item">
+				<input class="delivery-item" type="radio" name="Delivery" value="1" checked data-radio data-custom>
+				<span class="delivery-item__body" data-radio-custom>
+					<span class="delivery-item__title">Курьером по Москве</span>
+					<img class="delivery-item__img" src="assets/img/delivery/curier.png" alt="Курьером по Москве">
+					<span class="delivery-item__desc">В удобное для Вас время. Сроки доставки 1-2 дня</span>
+				</span>
+			</div>
+			<div class="delivery__item">
+				<input class="delivery-item" type="radio" name="Delivery" value="2" data-radio data-custom>
+				<span class="delivery-item__body" data-radio-custom>
+					<span class="delivery-item__title">СДЭК</span>
+					<img class="delivery-item__img" src="assets/img/delivery/sdec.png" alt="СДЭК">
+					<span class="delivery-item__desc">До двери или до пункта самовывоза с объявленной ценностью. Сроки доставки от 1-2 дней</span>
+				</span>
+			</div>
+			<div class="delivery__item">
+				<input class="delivery-item" type="radio" name="Delivery" value="3" data-radio data-custom>
+				<span class="delivery-item__body" data-radio-custom>
+					<span class="delivery-item__title">Почта России</span>
+					<img class="delivery-item__img" src="assets/img/delivery/post.png" alt="Почта России">
+					<span class="delivery-item__desc">До выбранного отделения с объявленной ценностью. Сроки доставки от 2-3 дней</span>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="form__row form__row_1">
+		<div class="form__column">
+			<div class="form__label-title">Оцените функциональность формы</div>
+			<div data-rating="ratingDefault" data-value="1.6"></div>
+		</div>
+		<div class="form__column">
+			<div class="form__label-title">Уже проголосовано</div>
+			<div data-rating="ratingVoted" data-value="2.5" data-disable></div>
+		</div>
+		<div class="form__column">
+			<div class="form__label-title">А можно по десятибальной шкале (или по стобальной. Какой захотите)</div>
+			<div data-rating="ratingTen" data-value="3.4" data-count="10"></div>
+		</div>
+		<div class="form__column">
+			<div class="form__label-title">А можно сразу на сервер</div>
+			<div data-rating="ratingAsync" data-value="3.6" data-action="./"></div>
+		</div>
+	</div>
+	<div class="form__column">
+		<div class="form__label-title">Ваше согласие на обработку персональных данных</div>
+		<div class="form__single">
+			<input type="checkbox" name="Agreement" value="1" data-required data-check data-label="Я согласен предоставить эту информацию">
+		</div>
+	</div>
+	<div class="form__actions">
+		<button class="form__button btn" type="submit">Отправить</button>
+	</div>
+</form>

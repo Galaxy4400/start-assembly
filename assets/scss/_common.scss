@@ -1,0 +1,238 @@
+:root {
+	--color-white:						#ffffff;
+	--color-lightest:					#f8f8f8;
+	--color-lighter:					#eeeeee;
+	--color-light:						#e8e8e8;
+	--color-gray-lightest:		#dddddd;
+	--color-gray-lighter:			#d8d8d8;
+	--color-gray-light:				#cccccc;
+	--color-gray:							#c8c8c8;
+	--color-gray-dark:				#bbbbbb;
+	--color-gray-darker:			#b8b8b8;
+	--color-gray-darkest:			#aaaaaa;
+	--color-shadow-lightest:	#999999;
+	--color-shadow-lighter:		#888888;
+	--color-shadow-light:			#777777;
+	--color-shadow:						#666666;
+	--color-shadow-dark:			#555555;
+	--color-shadow-darker:		#444444;
+	--color-shadow-darkest:		#333333;
+	--color-dark:							#222222;
+	--color-darker:						#111111;
+	--color-darkest:					#080808;
+	--color-black:						#000000;
+
+	--color-blue-lighter:			#d2d1ff;
+	--color-blue-light:				#908af7;
+	--color-blue:							#4f46e5;
+	--color-blue-dark:				#271dd7;
+	--color-error:						#b81111;
+	--color-warning:					#ffc107;
+	--color-success:					#198754;
+	--color-focus:						#26B9FF;
+	--color-gold:							#ffd700;
+}
+
+//===============================================================
+
+// Стилизация скроллбаров
+@media (any-hover: hover) {
+	::-webkit-scrollbar {
+		width: px(10);
+		height: px(10);
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--color-lighter);
+		box-shadow: 0 0 px(2) rgba(0, 0, 0, .2) inset;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--color-blue-light);
+		border-radius: px(5);
+		border: px(2) solid var(--color-lighter);
+		&:hover {
+			background: var(--color-blue);
+		}
+	}
+}
+
+//===============================================================
+
+html {
+}
+
+body {
+	color: var(--color-black);
+	background: var(--color-lightest);
+	font-size: rem(16);
+	line-height: prc(21, 16);
+	&._lock {
+		overflow: hidden;
+	}
+
+	//---------------------------------------------------------------
+
+	a {
+		transition: all 0.3s ease 0s;
+		color: var(--color-black);
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-blue-dark);
+			}
+		}
+	}
+
+	//---------------------------------------------------------------
+
+	.h1,
+	h1 a,
+	h1 {
+		font-weight: 500;
+		font-size: rem(40);
+		line-height: prc(42, 40);
+	}
+	.h2,
+	h2 a,
+	h2 {
+		font-weight: 500;
+		font-size: rem(36);
+		line-height: prc(42, 36);
+	}
+	.h3,
+	h3 a,
+	h3 {
+		font-size: rem(28);
+		line-height: prc(33, 28);
+	}
+	.h4,
+	h4 a,
+	h4 {
+		font-size: rem(21);
+		line-height: prc(24, 21);
+	}
+	.h5,
+	h5 a,
+	h5 {
+		font-size: rem(19);
+		line-height: prc(21, 19);
+	}
+
+	
+	//---------------------------------------------------------------
+	._special-styles {
+
+		h1, h2, h3, h4, h5, h6 {
+			margin: 0px 0px rem(20) 0px;
+		}
+
+		a {
+			transition: all 0.3s ease 0s;
+			color: var(--color-black);
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--color-blue-dark);
+				}
+			}
+		}
+
+		p {
+			margin: 0px 0px rem(20) 0px;
+		}
+
+		figure {
+			display: inline-block;
+			margin: 0px 0px rem(20) 0px;
+			img {
+				border-radius: rem(5);
+			}
+		}
+
+		ul {
+			padding: 0px 0px 0px rem(22);
+			margin: 0px 0px rem(10) 0px;
+			li {
+				position: relative;
+				line-height: 150%;
+				margin: 0px 0px rem(10) 0px;
+				& > ul, & > ol {
+					padding-top: rem(10);
+				}
+				&::before {
+					content: '';
+					position: absolute;
+					top: em(9);
+					left: em(-18);
+					width: em(6);
+					height: em(6);
+					background: var(--color-blue-dark);
+					border-radius: 50%;
+				}
+			}
+		}
+
+		ol {
+			padding: 0px 0px 0px rem(22);
+			margin: 0px 0px rem(15) 0px;
+			li {
+				line-height: 150%;
+				margin: 0px 0px rem(10) 0px;
+				& > ul, & > ol {
+					padding-top: rem(10);
+				}
+			}
+		}
+
+		table {
+			max-width: 100%;
+			border-collapse: collapse;
+			margin: 0px 0px rem(40) 0px;
+			@media (max-width: ($md3+'px')) {
+				margin: 0px 0px rem(20) 0px;
+			}
+			tr{
+				th{
+					font-size: rem(16);
+					font-weight: 400;
+					background: var(--color-darker);
+					padding: rem(5) rem(10);
+					border: 1px solid var(--color-black);
+					color: var(--color-white);
+				}
+				td {
+					background: var(--color-gray-lightest);
+					border: 1px solid var(--color-black);
+					padding: rem(5) rem(10);
+				}
+			}
+		}
+
+		.table-wrapper {
+			width: 100%;
+			overflow-x: auto;
+		}
+	}
+}
+
+// Оболочка контента сайта. Необходимма, чтобы футер всегда был прижат к низу экрана
+.wrapper {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&._loaded {
+	}
+}
+
+// Основной блок
+.page {
+	// .page__section
+	&__section {
+		margin: 0px 0px rem(100) 0px;
+	}
+}
+
+
+
+

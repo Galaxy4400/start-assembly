@@ -1,0 +1,74 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.footer {
+	padding: rem(50) 0px 0px 0px;
+	margin: 0px 0px rem(100) 0px;
+	// .footer__container
+	&__container {
+	}
+	// .footer__section
+	&__section {
+		margin: 0px 0px rem(50) 0px;
+	}
+	// .footer__title
+	&__title {
+		margin: 0px 0px rem(20) 0px;
+	}
+}
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.adapt {
+	padding: rem(20);
+	margin: rem(20);
+	background: var(--color-white);
+	display: grid;
+	grid-gap: rem(20);
+	min-height: rem(200);
+	box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
+	border-radius: rem(10);
+	// .adapt__block
+	&__block {
+		display: grid;
+		grid-gap: rem(20);
+		padding: rem(20);
+		box-shadow: 0px 0px rem(20) 0px rgba(34, 60, 80, 0.2);
+		border-radius: rem(10);
+		// .adapt__block_1
+		&_1 {
+			background: #fdbaba;
+		}
+		// .adapt__block_1-1
+		&_1-1 {
+			background: #cafa5a;
+		}
+		// .adapt__block_1-2
+		&_1-2 {
+			background: #6caefa;
+		}
+		// .adapt__block_2
+		&_2 {
+			background: #c0ffee;
+		}
+		// .adapt__block_2-1
+		&_2-1 {
+			background: #ffd700;
+		}
+		// .adapt__block_3
+		&_3 {
+			background: #c8bef8;
+		}
+	}
+	// .adapt__title
+	&__title {
+		display: grid;
+		span {
+			font-size: rem(16);
+			font-style: italic;
+		}
+	}
+}
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

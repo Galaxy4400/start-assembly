@@ -1,0 +1,19 @@
+._spoiler._init {
+	--spoller-time: 0.3s;
+	._spoiler-item {
+	}
+	._spoiler-control {
+	}
+	._spoiler-container {
+		display: grid;
+		grid-template-rows: 0fr;
+		overflow: hidden;
+		transition: all var(--spoller-time) ease-out;
+		._spoiler-wrapper {
+			min-height: 0px;
+		}
+		&._active {
+			grid-template-rows: 1fr;
+		}
+	}
+}
