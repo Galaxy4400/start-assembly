@@ -340,6 +340,7 @@ class Menu {
 	 * Зафиксировать пролистывание страницы
 	 */
 	#disableScroll() {
+		this.#lock();
 		document.body.classList.add(this.classes.lock);
 	}
 
@@ -348,7 +349,41 @@ class Menu {
 	 * Отменить фиксацию страницы
 	 */
 	#enableScroll() {
+		this.#unlock();
 		document.body.classList.remove(this.classes.lock);
+	}
+
+
+	/**
+	* Фиксация абсолютно-позиционизируемых элементов содержащих соответствующий атрибут: data-fix, data-fix-m
+	*/
+	#lock() {
+		const fixBlocks = document.querySelectorAll(`[data-fix]`);
+		const fixBlocksM = document.querySelectorAll(`[data-fix-m]`);
+		const offset = window.innerWidth - document.body.offsetWidth + 'px';
+		fixBlocks.forEach((el) => {
+			el.style.paddingRight = offset;
+		});
+		fixBlocksM.forEach((el) => {
+			el.style.marginRight = offset;
+		});
+		document.body.style.paddingRight = offset;
+	}
+
+	
+	/**
+		* Отмена Фиксации абсолютно-позиционизируемых элементов содержащих соответствующий атрибут: data-fix, data-fix-m
+		*/
+	#unlock() {
+		const fixBlocks = document.querySelectorAll(`[data-fix]`);
+		const fixBlocksM = document.querySelectorAll(`[data-fix-m]`);
+		fixBlocks.forEach((el) => {
+			el.style.paddingRight = '0px';
+		});
+		fixBlocksM.forEach((el) => {
+			el.style.marginRight = '0px';
+		});
+		document.body.style.paddingRight = '0px';
 	}
 
 
