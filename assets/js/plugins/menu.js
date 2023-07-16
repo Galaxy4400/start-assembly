@@ -372,8 +372,8 @@ class Menu {
 
 	
 	/**
-		* Отмена Фиксации абсолютно-позиционизируемых элементов содержащих соответствующий атрибут: data-fix, data-fix-m
-		*/
+	* Отмена Фиксации абсолютно-позиционизируемых элементов содержащих соответствующий атрибут: data-fix, data-fix-m
+	*/
 	#unlock() {
 		const fixBlocks = document.querySelectorAll(`[data-fix]`);
 		const fixBlocksM = document.querySelectorAll(`[data-fix-m]`);
