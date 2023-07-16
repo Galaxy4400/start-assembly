@@ -6820,6 +6820,9 @@ textarea.input {
   font-style: italic;
   color: var(--color-error);
 }
+/**
+ * Стили галлерей
+ */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(21.875rem, 1fr));
@@ -6894,6 +6897,9 @@ textarea.input {
      object-fit: cover;
 }
 
+/**
+ * Стили иконки меню
+ */
 .menu-icon {
   display: none;
 }
@@ -6945,6 +6951,61 @@ textarea.input {
   }
 }
 
+/**
+ * Стили хлебных крошек
+ */
+.breadcrumbs__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.breadcrumbs__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.breadcrumbs__item:not(:last-child)::after {
+  content: "»";
+  margin: 0px 0.625rem;
+  color: #000;
+  font-weight: 500;
+}
+.breadcrumbs__link {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 250px;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  color: inherit;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: #000;
+}
+@media (any-hover: hover) {
+  .breadcrumbs__link:hover {
+    color: var(--color-green);
+  }
+}
+.breadcrumbs__current {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 250px;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  color: #000;
+}
+
+/**
+ * Стили пагинации
+ */
 .pagging {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6961,6 +7022,9 @@ textarea.input {
   display: -ms-flexbox;
   display: flex;
 }
+/**
+ * Стили иконки возврата к началу страницы
+ */
 .move-up {
   width: 3.125rem;
   height: 3.125rem;

@@ -1,4 +1,6 @@
-//===============================================================
+/**
+ * Стили галлерей
+ */
 .gallery {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(rem(350), 1fr));
@@ -63,7 +65,10 @@
 	}
 }
 
-//===============================================================
+
+/**
+ * Стили иконки меню
+ */
 .menu-icon {
 	display: none;
 	@media (max-width: em($md3)) {
@@ -107,7 +112,58 @@
 	}
 }
 
-//===============================================================
+
+/**
+ * Стили хлебных крошек
+ */
+.breadcrumbs {
+	// .breadcrumbs__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	// .breadcrumbs__item
+	&__item {
+		display: flex;
+		align-items: center;
+		&:not(:last-child)::after {
+			content: '»';
+			margin: 0px rem(10);
+			color: #000;
+			font-weight: 500;
+		}
+	}
+	// .breadcrumbs__link
+	&__link {
+		display: inline-block;
+		overflow: hidden;
+		white-space: nowrap;
+		max-width: 250px;
+		text-overflow: ellipsis;
+		color: inherit;
+		transition: all 0.3s ease 0s;
+		color: #000;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-green);
+			}
+		}
+	}
+	// .breadcrumbs__current
+	&__current {
+		display: inline-block;
+		overflow: hidden;
+		white-space: nowrap;
+		max-width: 250px;
+		text-overflow: ellipsis;
+		color: #000;
+	}
+}
+
+
+/**
+ * Стили пагинации
+ */
 .pagging {
 	display: flex;
 	align-items: center;
@@ -129,7 +185,10 @@
 	}
 }
 
-//===============================================================
+
+/**
+ * Стили иконки возврата к началу страницы
+ */
 .move-up {
 	width: rem(50);
 	height: rem(50);
@@ -185,5 +244,3 @@
 		transform: translate(calc(-50% - rem(6.5)), -50%) rotate(-45deg);
 	}
 }
-
-//===============================================================
