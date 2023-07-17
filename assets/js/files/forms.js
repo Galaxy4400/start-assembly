@@ -1065,7 +1065,7 @@ function getFieldRules(input) {
 	let rules = [];
 
 	const type = input.type ? input.type : false;
-	const required = input.dataset.required !== undefined ? true : false;
+	const required = input.required ? true : false;
 	const repeater = input.dataset.repeater !== undefined ? true : false;
 	const number = input.dataset.number !== undefined ? true : false;
 	const min = input.dataset.min ? input.dataset.min : false;

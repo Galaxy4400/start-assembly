@@ -509,13 +509,13 @@
 							<div class="form__column">
 								<label class="form__label">
 									<span class="form__label-title">Обязательное текстовое поле</span>
-									<input class="input" type="text" name="Name" data-required data-min="3" data-max="20" placeholder="Введите ваше имя">
+									<input class="input" type="text" name="Name" required data-min="3" data-max="20" placeholder="Введите ваше имя">
 								</label>
 							</div>
 							<div class="form__column">
 								<label class="form__label">
 									<span class="form__label-title">Обязательное поле даты с датапикером</span>
-									<input class="form__input input" type="text" name="Birthday" data-date data-required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг" placeholder="Укажите вашу дату рождения">
+									<input class="form__input input" type="text" name="Birthday" data-date required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг" placeholder="Укажите вашу дату рождения">
 								</label>
 							</div>
 						</div>
@@ -523,13 +523,13 @@
 							<div class="form__column">
 								<label class="form__label">
 									<span class="form__label-title">Обязательное поле телефона с маской</span>
-									<input class="form__input input" type="tel" name="Phone" data-required data-mask="+7 (999) 999-9999" data-mask-placeholder="_" data-mask-between="2" placeholder="Укажите ваш телефон">
+									<input class="form__input input" type="tel" name="Phone" required data-mask="+7 (999) 999-9999" data-mask-placeholder="_" data-mask-between="2" placeholder="Укажите ваш телефон">
 								</label>
 							</div>
 							<div class="form__column">
 								<label class="form__label">
 									<span class="form__label-title">Обязательное поле почты</span>
-									<input class="form__input input" type="email" name="Email" data-required placeholder="Введите вашу почту">
+									<input class="form__input input" type="email" name="Email" required placeholder="Введите вашу почту">
 								</label>
 							</div>
 						</div>
@@ -551,7 +551,7 @@
 							<div class="form__column" data-switch="lgbt">
 								<div class="form__label-title">Поле, привязанное к радиокнопке - мужчина (Ты часом не пидор?)</div>
 								<div class="form__single">
-									<input type="checkbox" name="lgbt" value="1" data-required data-check data-label="Я не пидор!">
+									<input type="checkbox" name="lgbt" value="1" required data-check data-label="Я не пидор!">
 								</div>
 							</div>
 						</div>
@@ -577,7 +577,7 @@
 						</div>
 						<div class="form__column">
 							<div class="form__label-title">Кастомный селектор</div>
-							<select name="Animals" data-required data-choice data-search data-placeholder="Поиск животного">
+							<select name="Animals" required data-choice data-search data-placeholder="Поиск животного">
 								<option value="">Выберите животное</option>
 								<option value="1">Кошка</option>
 								<option value="2">Собака</option>
@@ -634,38 +634,38 @@
 						<div class="form__column" data-switch="address">
 							<label class="form__label">
 								<span class="form__label-title">Поле, привязанное к чекбоксу (Ваш адрес)</span>
-								<input class="form__input input" type="text" name="Address" data-required data-min="3" placeholder="Укажите ваш адрес">
+								<input class="form__input input" type="text" name="Address" required data-min="3" placeholder="Укажите ваш адрес">
 							</label>
 						</div>
 						<div class="form__column" data-switch="address">
 							<label class="form__label">
 								<span class="form__label-title">Поле, привязанное к чекбоксу (Ваш почтовый индекс)</span>
-								<input class="form__input input" type="text" name="Index" data-required data-min="3" data-mask="999999" data-mask-placeholder="_" data-mask-between="2" placeholder="Укажите ваш почтовый индекс">
+								<input class="form__input input" type="text" name="Index" required data-min="3" data-mask="999999" data-mask-placeholder="_" data-mask-between="2" placeholder="Укажите ваш почтовый индекс">
 							</label>
 						</div>
 						<div class="form__column" data-switch="social">
 							<label class="form__label">
 								<span class="form__label-title">Поле, привязанное к чекбоксу (Ваш месенджер)</span>
-								<input class="form__input input" type="text" name="Social" data-required placeholder="Укажите ссылку на ваш месенджер">
+								<input class="form__input input" type="text" name="Social" required placeholder="Укажите ссылку на ваш месенджер">
 							</label>
 						</div>
 						<div class="form__column">
 							<label class="form__label">
 								<span class="form__label-title">Обязательное поле области текста</span>
-								<textarea class="form__input input" name="Message" data-required placeholder="Введите сообщение"></textarea>
+								<textarea class="form__input input" name="Message" required placeholder="Введите сообщение"></textarea>
 							</label>
 						</div>
 						<div class="form__row form__row_2">
 							<div class="form__column">
 								<label class="form__label">
 									<span class="form__label-title">Обязательное поле пароля</span>
-									<input class="form__input input" type="password" name="Password" data-required data-repeat placeholder="Введите пароль" autocomplete="new-password">
+									<input class="form__input input" type="password" name="Password" required data-repeat placeholder="Введите пароль" autocomplete="new-password">
 								</label>
 							</div>
 							<div class="form__column">
 								<label class="form__label">
 									<span class="form__label-title">Повторитель пароля</span>
-									<input class="form__input input" type="password" name="Password2" data-required data-repeater placeholder="Повторите пароль">
+									<input class="form__input input" type="password" name="Password2" required data-repeater placeholder="Повторите пароль">
 								</label>
 							</div>
 						</div>
@@ -767,7 +767,7 @@
 						<div class="form__column">
 							<div class="form__label-title">Ваше согласие на обработку персональных данных</div>
 							<div class="form__single">
-								<input type="checkbox" name="Agreement" value="1" data-required data-check data-label="Я согласен предоставить эту информацию">
+								<input type="checkbox" name="Agreement" value="1" required data-check data-label="Я согласен предоставить эту информацию">
 							</div>
 						</div>
 						<div class="form__actions">
@@ -2539,7 +2539,7 @@
 					<h3>Элементы <b><i>input</i></b> и <b><i>textarea</i></b></h3>
 					<ol>
 						<li>
-							<p><b>data-required</b></p>
+							<p><b>required</b></p>
 							<p>Делает поле обязательным для заполнения.</p>
 						</li>
 						<li>
@@ -2568,7 +2568,7 @@
 					<h3>Элементы c типом <b><i>radio</i></b> и <b><i>checkbox</i></b></h3>
 					<ol>
 						<li>
-							<p><b>data-required</b></p>
+							<p><b>required</b></p>
 							<p>Делает поле обязательным для заполнения.</p>
 						</li>
 						<li>
