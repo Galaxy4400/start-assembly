@@ -1067,7 +1067,6 @@ function getFieldRules(input) {
 	const type = input.type ? input.type : false;
 	const required = input.required ? true : false;
 	const repeater = input.dataset.repeater !== undefined ? true : false;
-	const number = input.dataset.number !== undefined ? true : false;
 	const min = input.dataset.min ? input.dataset.min : false;
 	const max = input.dataset.max ? input.dataset.max : false;
 	const regexp = input.dataset.regexp ? input.dataset.regexp : false;
@@ -1128,14 +1127,6 @@ function getFieldRules(input) {
 				return true;
 			},
 			errorMessage: 'Passwords should be the same',
-		});
-	}
-
-	// Соответствие на число
-	if (number) {
-		rules.push({
-			rule: 'number',
-			errorMessage: `Value should be a number`,
 		});
 	}
 
