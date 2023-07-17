@@ -28,7 +28,7 @@
 	&_big {
 		height: em(50);
 	}
-	// .btn_logn
+	// .btn_long
 	&_long {
 		min-width: em(200);
 	}
@@ -450,11 +450,20 @@ textarea.input {
 	span.form__label-title {
 		display: inline-block;
 	}
+	// .form__section
+	&__section {
+	}
+	// .form__title
+	&__title {
+		color: var(--color-black);
+		margin: 0px 0px rem(10) 0px;
+	}
 	// .form__row
 	&__row {
 		display: grid;
 		grid-gap: rem(16) rem(32);
 		min-width: 0;
+		grid-template-columns: repeat(1, 1fr);
 		// .form__row_1
 		&_1 {
 			grid-template-columns: repeat(1, 1fr);
@@ -496,11 +505,20 @@ textarea.input {
 	&__label-title {
 		cursor: pointer;
 		margin: 0px 0px em(5) 0px;
+		color: var(--color-black);
+		&::after {
+			content: attr(data-req);
+			color: var(--color-error);
+			margin: 0px 0px 0px rem(3);
+		}
 	}
 	&__error-label {
 		font-size: rem(14);
 		font-style: italic;
 		color: var(--color-error);
+	}
+	// .form__actions
+	&__actions {
 	}
 
 	//===============================================================
