@@ -108,14 +108,7 @@ function headerState() {
 document.querySelectorAll('[data-goto]').forEach(link => {
 	link.addEventListener('click', (e) => {
 		e.preventDefault();
-
 		let offset = 0;
-
-		// Если на странице есть фиксированный блок, то добавляем смещение равное его высоте.
-		const fixedBlock = document.querySelector('._fixed');
-		if (fixedBlock) {
-			offset = fixedBlock.getBoundingClientRect().height + parseInt(getComputedStyle(fixedBlock).marginBottom);
-		}
 
 		// Если смещение установлено в дата-атрибуте, то значение берётся из него.
 		if (link.dataset.offset) {

@@ -78,7 +78,6 @@ document.querySelectorAll('[data-link]').forEach(link => {
 function scrollTo(target, offset = 0, focus = false) {
 	const scrollTarget = (typeof target == 'object') ? target : document.querySelector(`.${target}`);
 	const elementPosition = scrollTarget.getBoundingClientRect().top;
-	const offsetPosition = elementPosition - offset;
 
 	const isLocked = document.body.classList.contains('_lock') ? true : false;
 
@@ -105,6 +104,14 @@ function scrollTo(target, offset = 0, focus = false) {
 	}
 
 	if (isLocked) return;
+
+	// Если на странице есть фиксированный блок, то добавляем смещение равное его высоте.
+	const fixedBlock = document.querySelector('._fixed');
+	if (fixedBlock) {
+		offset = offset + fixedBlock.getBoundingClientRect().height + parseInt(getComputedStyle(fixedBlock).marginBottom);
+	}
+
+	const offsetPosition = elementPosition - offset;
 
 	// Переход к элементу
 	window.scrollBy({
