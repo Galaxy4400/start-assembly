@@ -1185,7 +1185,7 @@ swiper-container .swiper-notification {
 .choices[data-type*=select-one]::before {
   content: "";
   position: absolute;
-  z-index: 10;
+  z-index: 4;
   right: 2.5rem;
   top: 50%;
   -webkit-transform: translate(0, -50%);
