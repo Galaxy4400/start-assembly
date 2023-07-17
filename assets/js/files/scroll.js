@@ -265,16 +265,20 @@ document.querySelectorAll('[data-dynamic-loader]').forEach(dynamicLoader => {
 	};
 
 	if (container.dataset.loadDisable === undefined) {
+		dynamicLoader.classList.add('_active');
 		dynamicLoader.innerHTML = loaderLocalization['disable'][LOCALIZATION];
 	} else {
+		dynamicLoader.classList.remove('_active');
 		dynamicLoader.innerHTML = loaderLocalization['enable'][LOCALIZATION];
 	}
 
 	dynamicLoader.addEventListener('click', () => {
 		if (container.dataset.loadDisable === undefined) {
+			dynamicLoader.classList.remove('_active');
 			container.setAttribute('data-load-disable', '');
 			dynamicLoader.innerHTML = loaderLocalization['enable'][LOCALIZATION];
 		} else {
+			dynamicLoader.classList.add('_active');
 			container.removeAttribute('data-load-disable');
 			dynamicLoader.innerHTML = loaderLocalization['disable'][LOCALIZATION];
 			loadContentOnScroll();

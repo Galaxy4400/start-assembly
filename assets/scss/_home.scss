@@ -95,6 +95,17 @@
 		display: flex;
 		justify-content: center;
 	}
+	// .loaded-content__btn
+	&__btn {
+		&._active {
+			position: fixed;
+			z-index: 100;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: rem(4) rem(4) 0 0;
+		}
+	}
 }
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!

@@ -6779,10 +6779,15 @@ textarea.input {
 .form span.form__label-title {
   display: inline-block;
 }
+.form__title {
+  color: var(--color-black);
+  margin: 0px 0px 0.625rem 0px;
+}
 .form__row {
   display: grid;
   grid-gap: 1rem 2rem;
   min-width: 0;
+  grid-template-columns: repeat(1, 1fr);
 }
 .form__row_1 {
   grid-template-columns: repeat(1, 1fr);
@@ -6818,6 +6823,12 @@ textarea.input {
 .form__label-title {
   cursor: pointer;
   margin: 0px 0px 0.3125em 0px;
+  color: var(--color-black);
+}
+.form__label-title::after {
+  content: attr(data-req);
+  color: var(--color-error);
+  margin: 0px 0px 0px 0.1875rem;
 }
 .form__error-label {
   font-size: 0.875rem;
@@ -7956,6 +7967,16 @@ textarea.input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.loaded-content__btn._active {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .loaded-content-item__title {
