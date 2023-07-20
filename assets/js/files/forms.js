@@ -29,7 +29,6 @@ document.querySelectorAll('input[data-radio]').forEach(radio => {
 	if (radio.type != 'radio') { console.error("Элемент должен являеться input[type='radio']"); return; }
 
 	const isCustom = radio.dataset.custom !== undefined ? true : false;
-	const radioClone = radio.cloneNode();
 	const radioContainer = document.createElement('label');
 	const radioLabel = isCustom ? radio.nextElementSibling : document.createElement('span');
 
@@ -47,18 +46,17 @@ document.querySelectorAll('input[data-radio]').forEach(radio => {
 	}
 
 	if (!isCustom) {
-		radioLabel.innerText = radioClone.dataset.label;
+		radioLabel.innerText = radio.dataset.label;
 		radioLabel.className = 'radio__mark';
 	}
 	
-	if (radioClone.checked) radioContainer.classList.add('_checked');
+	if (radio.checked) radioContainer.classList.add('_checked');
 
-	radioContainer.append(radioClone);
 	radioContainer.append(radioLabel);
 
 	radio.after(radioContainer);
-	radioClone.replaceWith(radio);
-
+	radioContainer.prepend(radio);
+	
 	radio.addEventListener('change', () => {
 		document.querySelectorAll(`input[data-radio][name="${radio.name}"]`).forEach(radio => {
 			radio.parentElement.classList.remove('_checked');
@@ -87,7 +85,6 @@ document.querySelectorAll('input[data-check]').forEach(check => {
 	if (check.type != 'checkbox') { console.error("Элемент должен являеться input[type='checkbox']"); return; }
 
 	const isCustom = check.dataset.custom !== undefined ? true : false;
-	const checkClone = check.cloneNode();
 	const checkContainer = document.createElement('label');
 	const checkLabel = isCustom ? check.nextElementSibling : document.createElement('span');
 
@@ -105,16 +102,15 @@ document.querySelectorAll('input[data-check]').forEach(check => {
 	}
 
 	if (!isCustom) {
-		checkLabel.innerText = checkClone.dataset.label;
+		checkLabel.innerText = check.dataset.label;
 		checkLabel.className = 'check__mark';
 	}
-	if (checkClone.checked) checkContainer.classList.add('_checked');
+	if (check.checked) checkContainer.classList.add('_checked');
 
-	checkContainer.append(checkClone);
 	checkContainer.append(checkLabel);
 
 	check.after(checkContainer);
-	checkClone.replaceWith(check);
+	checkContainer.prepend(check);
 
 	check.addEventListener('change', () => {
 		check.checked ? check.parentElement.classList.add('_checked') : check.parentElement.classList.remove('_checked');
@@ -137,7 +133,6 @@ document.querySelectorAll('input[data-file]').forEach(input => {
 		Russian: 'Выберите файл',
 	};
 
-	const inputClone = input.cloneNode();
 	const inputContainer = document.createElement('label');
 	const inputLabel = document.createElement('span');
 	const inputButton = document.createElement('span');
@@ -149,11 +144,10 @@ document.querySelectorAll('input[data-file]').forEach(input => {
 	inputButton.innerText = fileButtonLocalization[LOCALIZATION];
 
 	inputContainer.append(inputLabel);
-	inputContainer.append(inputClone);
 	inputContainer.append(inputButton);
 
 	input.after(inputContainer);
-	inputClone.replaceWith(input);
+	inputLabel.after(input);
 
 	input.addEventListener('change', () => {
 		// Вставка в текстовый блок названий выбранных файлов
@@ -235,7 +229,6 @@ document.querySelectorAll('[data-slider]').forEach((range) => {
 	const rangeShowInputs = range.dataset.inputs !== undefined ? true : false;
 
 	// Создание дополнительной структуры элементов
-	const rangeClone = range.cloneNode();
 	const rangeContainer = document.createElement('div');
 	const rangeLabel = document.createElement('div');
 	const rangeInputsContainer = document.createElement('div');
@@ -267,11 +260,10 @@ document.querySelectorAll('[data-slider]').forEach((range) => {
 	range.className = `range__slider`;
 
 	rangeContainer.append(rangeInputsContainer);
-	rangeContainer.append(rangeClone);
 	rangeContainer.append(rangeLabel);
 
 	range.after(rangeContainer);
-	rangeClone.replaceWith(range);
+	rangeInputsContainer.after(range);
 
 	// Инициализация диапазона
 	noUiSlider.create(range, {
@@ -375,7 +367,6 @@ document.querySelectorAll('input[data-qty]').forEach(qtyInput => {
 	if (qtyInput.value < min) qtyInput.value = min;
 	if (qtyInput.value > max) qtyInput.value = max;
 
-	const inputClone = qtyInput.cloneNode();
 	const inputContainer = document.createElement('div');
 	const inputMinus = document.createElement('button');
 	const inputPlus = document.createElement('button');
@@ -383,18 +374,17 @@ document.querySelectorAll('input[data-qty]').forEach(qtyInput => {
 
 	inputMinus.type = 'button';
 	inputPlus.type = 'button';
-	inputContainer.className = 'quantity' + (inputClone.hasAttribute('readonly') ? ' _readonly' : '');
+	inputContainer.className = 'quantity' + (qtyInput.hasAttribute('readonly') ? ' _readonly' : '');
 	inputMinus.className = 'quantity__button quantity__button_minus';
 	inputPlus.className = 'quantity__button quantity__button_plus';
 	inputWrapper.className = 'quantity__input';
 
-	inputWrapper.append(inputClone);
 	inputContainer.append(inputMinus);
 	inputContainer.append(inputWrapper);
 	inputContainer.append(inputPlus);
 
 	qtyInput.after(inputContainer);
-	inputClone.replaceWith(qtyInput);
+	inputWrapper.prepend(qtyInput);
 
 	qtyInput.autocomplete = 'off';
 
