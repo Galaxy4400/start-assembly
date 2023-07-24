@@ -64,6 +64,38 @@
 }
 
 /**
+ * Делает таблицу адаптивной
+ */
+._table-adapt {
+	width: 100%;
+	thead {
+		@media (max-width: em($md3)) {
+			display: none;
+		}
+	}
+	tr {
+		@media (max-width: em($md3)) {
+			display: block;
+			margin: 0px 0px rem(20) 0px;
+			&:nth-child(2n) {
+				background: #fafafa;
+			}
+		}
+	}
+	td {
+		@media (max-width: em($md3)) {
+			display: flex;
+			gap: rem(10);
+			justify-content: space-between;
+			&::before {
+				content: attr(data-label);
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+/**
  * Устанавливает блоку бекграунд с анимацией загрузки
  */
 ._loading {
