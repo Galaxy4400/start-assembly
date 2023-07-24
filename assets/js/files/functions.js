@@ -60,6 +60,7 @@ document.querySelectorAll('[data-link]').forEach(link => {
 			link.classList.toggle('_active');
 			document.querySelector(linkedElementSelector).classList.toggle('_active');
 		} else if (!target.closest(linkedElementSelector) && document.querySelector(`${linkedElementSelector}._active`)) {
+			if (target.dataset.choice !== undefined) return;
 			link.classList.remove('_active');
 			document.querySelector(linkedElementSelector).classList.remove('_active');
 		}
