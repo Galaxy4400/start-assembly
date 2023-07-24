@@ -766,7 +766,7 @@ function validateForm(form) {
 
 	// Функция добавления валидации одиночному полю
 	const addFieldValidation = (field) => {
-		const rules = getFieldRules(field);
+		const rules = getFieldRules(field, form);
 		const config = getFieldConfig(field);
 
 		if (rules.length) {
@@ -1051,7 +1051,7 @@ function validateForm(form) {
  * 
  * @return {Array} - массив объектов правил валидации поля
  */
-function getFieldRules(input) {
+function getFieldRules(input, form) {
 	let rules = [];
 
 	const type = input.type ? input.type : false;
@@ -1109,12 +1109,10 @@ function getFieldRules(input) {
 	// Совпадение пароля
 	if (repeater) {
 		rules.push({
-			validator: (value, fields) => {
-				const field = Object.values(fields).find(field => field.elem.dataset.repeat !== undefined);
-				if (field) {
-					return value === field.elem.value;
-				}
-				return true;
+			validator: (repeatValue, fields) => {
+				const passwordField = form.querySelector('[data-repeat]');
+				if (!passwordField || (!passwordField.value && !repeatValue)) return true;
+				return repeatValue === passwordField.value;
 			},
 			errorMessage: 'Passwords should be the same',
 		});
