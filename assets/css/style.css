@@ -5912,6 +5912,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   --color-font: #000000;
   --color-link: #000000;
   --color-link-hover: #271dd7;
+  --color-titles: #000000;
 }
 
 @media (any-hover: hover) {
@@ -5958,6 +5959,7 @@ body h1 {
   font-weight: 500;
   font-size: 2.5rem;
   line-height: 105%;
+  color: var(--color-titles);
 }
 body .h2,
 body h2 a,
@@ -5965,24 +5967,28 @@ body h2 {
   font-weight: 500;
   font-size: 2.25rem;
   line-height: 116.6666666667%;
+  color: var(--color-titles);
 }
 body .h3,
 body h3 a,
 body h3 {
   font-size: 1.75rem;
   line-height: 117.8571428571%;
+  color: var(--color-titles);
 }
 body .h4,
 body h4 a,
 body h4 {
   font-size: 1.3125rem;
   line-height: 114.2857142857%;
+  color: var(--color-titles);
 }
 body .h5,
 body h5 a,
 body h5 {
   font-size: 1.1875rem;
   line-height: 110.5263157895%;
+  color: var(--color-titles);
 }
 body ._special-styles h1, body ._special-styles h2, body ._special-styles h3, body ._special-styles h4, body ._special-styles h5, body ._special-styles h6 {
   margin: 0px 0px 1.25rem 0px;
