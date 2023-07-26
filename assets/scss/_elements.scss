@@ -39,13 +39,13 @@
 				width: rem(60);
 				height: rem(60);
 				border-radius: 50%;
-				border: rem(3) solid var(--color-white);
+				border: rem(3) solid #ffffff;
 				padding: rem(10);
 			}
 			&::after {
 				transform: translate(calc(-50% + 0.625rem), -50%);
 				border: rem(15) solid transparent;
-				border-left: rem(20) solid var(--color-white);
+				border-left: rem(20) solid #ffffff;
 			}
 		}
 		@media (any-hover: hover) {
@@ -193,18 +193,18 @@
 	width: rem(50);
 	height: rem(50);
 	border-radius: 50%;
-	background-color: var(--color-blue);
+	background-color: var(--color-main);
 	position: fixed;
 	bottom: rem(20);
 	right: rem(20);
-	color: var(--color-white);
+	color: #ffffff;
 	opacity: 0;
 	visibility: hidden;
 	transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
 	z-index: 50;
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: var(--color-blue-dark);
+			background-color: var(--color-main-dark);
 		}
 	}
 	&._scroll {
@@ -224,7 +224,7 @@
 		width: rem(20);
 		top: 50%;
 		left: 50%;
-		background: var(--color-white);
+		background: #ffffff;
 		border-radius: rem(2);
 		@media (max-width: ($md4+'px')) {
 			height: rem(2);

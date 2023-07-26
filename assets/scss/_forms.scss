@@ -11,13 +11,13 @@
 	line-height: 1;
 	padding: em(8) em(22);
 	height: em(40);
-	background: var(--color-blue);
-	color: var(--color-white) !important;
+	background: var(--color-main);
+	color: #ffffff !important;
 	border-radius: em(4);
-	transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s, color 0.3s, box-shadow 0.1s;
 	@media (any-hover: hover) {
 		&:hover {
-			background: var(--color-blue-dark);
+			background: var(--color-main-dark);
 		}
 	}
 	// .btn_fw
@@ -31,6 +31,10 @@
 	// .btn_long
 	&_long {
 		min-width: em(200);
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 1px var(--color-focus);
 	}
 }
 
@@ -63,9 +67,9 @@ textarea {
 	line-height: prc(20, 16);
 	padding: em(10) em(12);
 	height: em(43, 16);
-	color: var(--color-black);
-	background: var(--color-white);
-	border: rem(1) solid var(--color-gray-light);
+	color: #000000;
+	background: #ffffff;
+	border: rem(1) solid #cccccc;
 	border-radius: rem(4);
 	transition: border 0.3s ease 0s;
 	&:focus {
@@ -115,8 +119,8 @@ textarea.input {
 	align-items: center;
 	flex-direction: row-reverse;
 	padding: em(10) em(12);
-	background: var(--color-white);
-	border: rem(1) solid var(--color-gray-light);
+	background: #ffffff;
+	border: rem(1) solid #cccccc;
 	border-radius: rem(4);
 	@media (max-width: ($md4+'px')) {
 		flex-direction: column-reverse;
@@ -143,7 +147,7 @@ textarea.input {
 		overflow: hidden;
 		padding: em(3) em(10);
 		margin: 0px rem(20) 0px 0px;
-		color: var(--color-darker);
+		color: #111111;
 		flex: 1 1 auto;
 		@media (max-width: em($md4)) {
 			white-space: normal;
@@ -160,15 +164,15 @@ textarea.input {
 		line-height: 1;
 		padding: em(8) em(22);
 		height: em(40, 16);
-		background: var(--color-white);
-		color: var(--color-blue);
-		border: rem(1) solid var(--color-blue);
+		background: #ffffff;
+		color: var(--color-main);
+		border: rem(1) solid var(--color-main);
 		border-radius: rem(4);
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				background: var(--color-blue);
-				color: var(--color-white);
+				background: var(--color-main);
+				color: #ffffff;
 			}
 		}
 	}
@@ -186,7 +190,7 @@ textarea.input {
 		&:focus + .input-file__btn {
 		}
 		.input-file &:disabled + .input-file__btn {
-			background-color: var(--color-gray-lightest);
+			background-color: #dddddd;
 		}
 	}
 }
@@ -216,8 +220,8 @@ textarea.input {
 				left: em(-30);
 				width: em(20);
 				height: em(20);
-				background: var(--color-white);
-				border: rem(1) solid var(--color-gray-light);
+				background: #ffffff;
+				border: rem(1) solid #cccccc;
 				border-radius: rem(4);
 				transition: all 0.3s ease 0s;
 			}
@@ -229,7 +233,7 @@ textarea.input {
 				width: em(7);
 				height: em(12);
 				border-width: 0 em(2) em(2) 0;
-				border-color: var(--color-white);
+				border-color: #ffffff;
 				border-style: solid;
 				display: block;
 				opacity: 0;
@@ -238,8 +242,8 @@ textarea.input {
 		}
 		&._checked {
 			.check__mark::before {
-				background: var(--color-blue);
-				border: rem(1) solid var(--color-blue);
+				background: var(--color-main);
+				border: rem(1) solid var(--color-main);
 			}
 			.check__mark::after {
 				opacity: 1;
@@ -295,8 +299,8 @@ textarea.input {
 				width: em(20);
 				height: em(20);
 				border-radius: 50%;
-				border: rem(1) solid var(--color-gray-light);
-				background: var(--color-white);
+				border: rem(1) solid #cccccc;
+				background: #ffffff;
 				transition: all 0.3s ease 0s;
 			}
 			&::after {
@@ -307,7 +311,7 @@ textarea.input {
 				width: em(12);
 				height: em(12);
 				border-radius: 50%;
-				background: var(--color-blue);
+				background: var(--color-main);
 				transition: all 0.3s ease 0s;
 				transform: scale(0);
 				opacity: 0;
@@ -351,11 +355,11 @@ textarea.input {
 	display: inline-flex;
 	width: em(88);
 	height: em(43);
-	border: rem(1) solid var(--color-gray-light);
+	border: rem(1) solid #cccccc;
 	border-radius: rem(4);
 	// .quantity__button
 	&__button {
-		background: var(--color-white);
+		background: #ffffff;
 		border-radius: rem(4);
 		flex: 0 0 em(30);
 		position: relative;
@@ -371,7 +375,7 @@ textarea.input {
 			left: 50%;
 			transition: all 0.3s ease 0s;
 			margin: 0px 0px 0px em(-4.5);
-			background-color: var(--color-shadow-lighter);
+			background-color: #888888;
 			width: em(9);
 			height: 1px;
 		}
@@ -379,7 +383,7 @@ textarea.input {
 			&:hover {
 				&::before,
 				&::after {
-					background-color: var(--color-darker);
+					background-color: #111111;
 				}
 			}
 		}
@@ -398,7 +402,7 @@ textarea.input {
 		flex: 1 1 auto;
 		input {
 			height: 100%;
-			color: var(--color-shadow-lighter);
+			color: #888888;
 			width: 100%;
 			text-align: center;
 			appearance: 'textfield';
@@ -408,7 +412,7 @@ textarea.input {
 				margin: 0;
 			}
 			&:focus {
-				color: var(--color-black);
+				color: #000000;
 			}
 		}
 	}
@@ -455,7 +459,7 @@ textarea.input {
 	}
 	// .form__title
 	&__title {
-		color: var(--color-black);
+		color: #000000;
 		margin: 0px 0px rem(10) 0px;
 	}
 	// .form__row
@@ -505,7 +509,7 @@ textarea.input {
 	&__label-title {
 		cursor: pointer;
 		margin: 0px 0px em(5) 0px;
-		color: var(--color-black);
+		color: #000000;
 		&::after {
 			content: attr(data-req);
 			color: var(--color-error);

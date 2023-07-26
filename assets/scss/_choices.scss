@@ -35,7 +35,7 @@
 	width: 100%;
 	padding: 10px;
 	margin: 0;
-	border-bottom: rem(1) solid var(--color-gray-light);
+	border-bottom: rem(1) solid #cccccc;
 }
 .choices[data-type*=select-one] .choices__button {
 	position: absolute;
@@ -81,14 +81,14 @@
 	transform: translate(0, -50%);
 	height: rem(25);
 	width: rem(1);
-	background: var(--color-gray-light);
+	background: #cccccc;
 }
 .choices[data-type*=select-one]::after {
 	content: "";
 	height: 0;
 	width: 0;
 	border-style: solid;
-	border-color: var(--color-gray-darkest) transparent transparent transparent;
+	border-color: #aaaaaa transparent transparent transparent;
 	border-width: rem(5);
 	position: absolute;
 	right: rem(15);
@@ -97,7 +97,7 @@
 	pointer-events: none;
 }
 .choices[data-type*=select-one].is-open::after {
-	border-color: transparent transparent var(--color-gray-darkest) transparent;
+	border-color: transparent transparent #aaaaaa transparent;
 	margin-top: -7.5px;
 }
 .choices[data-type*=select-one][dir=rtl]::after {
@@ -158,9 +158,9 @@
 	flex-wrap: wrap;
 	align-items: center;
 	width: 100%;
-	background-color: var(--color-white);
+	background-color: #ffffff;
 	padding: rem(5) rem(45) rem(5) rem(12);
-	border: rem(1) solid var(--color-gray-light);
+	border: rem(1) solid #cccccc;
 	border-radius: rem(4);
 	font-size: rem(16);
 	min-height: rem(43);
@@ -210,15 +210,15 @@
 	vertical-align: middle;
 	padding: rem(3) rem(10);
 	font-size: rem(12);
-	background: var(--color-blue);
-	border: rem(1) solid var(--color-blue-dark);
+	background: var(--color-main);
+	border: rem(1) solid var(--color-main-dark);
 	border-radius: rem(3);
-	color: var(--color-white);
+	color: #ffffff;
 	white-space: nowrap;
 }
 
 .choices__list--multiple .choices__item.is-highlighted {
-	background: var(--color-blue-dark);
+	background: var(--color-main-dark);
 }
 .is-disabled .choices__list--multiple .choices__item {
 	background-color: #aaaaaa;
@@ -323,10 +323,10 @@
 .choices__heading {
 	font-size: rem(16);
 	padding: rem(5) rem(10);
-	background: var(--color-lightest);
-	border-top: rem(1) solid var(--color-gray-light);
-	border-bottom: rem(1) solid var(--color-gray-light);
-	color: var(--color-black);
+	background: #f8f8f8;
+	border-top: rem(1) solid #cccccc;
+	border-bottom: rem(1) solid #cccccc;
+	color: #000000;
 	font-weight: 700;
 }
 

@@ -49,14 +49,14 @@
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .delivery-item {
 	display: block;
-	border: rem(1) solid var(--color-gray-light);
+	border: rem(1) solid #cccccc;
 	border-radius: rem(4);
 	padding: rem(20);
 	height: 100%;
 	transition: all 0.2s ease 0s;
-	background: var(--color-white);
+	background: #ffffff;
 	&._checked {
-		background: var(--color-blue-lighter);
+		background: #d2d1ff;
 	}
 	// .delivery-item__body
 	&__body {
@@ -161,7 +161,7 @@
 		padding: rem(5) rem(10);
 		font-size: rem(70);
 		line-height: 1;
-		color: var(--color-white);
+		color: #ffffff;
 		cursor: pointer;
 		text-shadow: 0px 0px rem(4) rgba(0,0,0,0.5);
 		opacity: 1;
@@ -174,7 +174,7 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-blue);
+				color: var(--color-main);
 			}
 		}
 		// .slider__arrow_prev
@@ -205,16 +205,16 @@
 		width: rem(12);
 		height: rem(12);
 		border-radius: 50%;
-		background: var(--color-white);
+		background: #ffffff;
 		box-shadow: 0px 0px rem(4) 0px rgba(0, 0, 0, 0.5);
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				background: var(--color-blue);
+				background: var(--color-main);
 			}
 		}
 		&._active {
-			background: var(--color-blue);
+			background: var(--color-main);
 		}
 	}
 }
@@ -253,7 +253,7 @@
 .spoiler {
 	// .spoiler__item
 	&__item {
-		background: var(--color-white);
+		background: #ffffff;
 		box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 		margin: 0px 0px rem(15) 0px;
 		padding: 0px rem(20);
@@ -270,9 +270,9 @@
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-blue-light);
+				color: var(--color-main-light);
 				&::before {
-					background: var(--color-blue-dark);
+					background: var(--color-main-dark);
 				}
 			}
 		}
@@ -290,13 +290,13 @@
 			top: em(4);
 			right: em(-14);
 			border-radius: 50%;
-			background: var(--color-blue);
+			background: var(--color-main);
 			transition: all 0.3s ease 0s;
 		}
 		.spoiler._init &::after {
 			content: '▼';
 			position: absolute;
-			color: var(--color-white);
+			color: #ffffff;
 			top: em(12);
 			right: em(-7);
 			transition: all 0.3s ease 0s;
@@ -314,7 +314,7 @@
 // !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .spoiler-deap {
-	background: var(--color-white);
+	background: #ffffff;
 	box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 	padding: rem(10) rem(20);
 	border-radius: rem(20);
@@ -336,7 +336,7 @@
 		padding: rem(5) 0px;
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-blue-light) !important;
+				color: var(--color-main-light) !important;
 			}
 		}
 	}
@@ -349,7 +349,7 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-blue-light);
+				color: var(--color-main-light);
 			}
 		}
 	}
@@ -358,21 +358,21 @@
 		// .spoiler-deap__container_level-1
 		&_level-1 {
 			border-radius: rem(10);
-			background: var(--color-lightest);
+			background: #f8f8f8;
 			.spoiler-deap__link {
 				padding-left: rem(10);
 			}
 		}
 		// .spoiler-deap__container_level-2
 		&_level-2 {
-			background: var(--color-lighter);
+			background: #eeeeee;
 			.spoiler-deap__link {
 				padding-left: rem(20);
 			}
 		}
 		// .spoiler-deap__container_level-3
 		&_level-3 {
-			background: var(--color-light);
+			background: #e8e8e8;
 			.spoiler-deap__link {
 				padding-left: rem(30);
 			}
@@ -383,7 +383,7 @@
 // !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .tabs {
-	background: var(--color-white);
+	background: #ffffff;
 	box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 	padding: rem(20) rem(20);
 	border-radius: rem(20);
@@ -393,9 +393,9 @@
 	}
 	// .tabs__btn
 	&__btn {
-		background: var(--color-blue-light);
+		background: var(--color-main-light);
 		&._active {
-			background: var(--color-blue);
+			background: var(--color-main);
 		}
 	}
 	// .tabs__content
@@ -420,9 +420,9 @@
 	}
 	// .tabs-inner__btn
 	&__btn {
-		background: var(--color-blue-light);
+		background: var(--color-main-light);
 		&._active {
-			background: var(--color-blue);
+			background: var(--color-main);
 		}
 	}
 	// .tabs-inner__content
@@ -488,13 +488,13 @@
 		font-style: italic;
 		display: inline-block;
 		padding: rem(20) rem(30);
-		border: rem(1) solid var(--color-blue-light);
+		border: rem(1) solid var(--color-main-light);
 		border-radius: rem(15);
-		background: var(--color-blue-lighter);
+		background: #d2d1ff;
 		font-weight: 600;
 		margin: 0px 0px rem(20) 0px;
 		a {
-			color: var(--color-blue) !important;
+			color: var(--color-main) !important;
 		}
 	}
 	// .info__warning-block
@@ -508,7 +508,7 @@
 		font-weight: 600;
 		margin: 0px 0px rem(20) 0px;
 		a {
-			color: var(--color-blue) !important;
+			color: var(--color-main) !important;
 		}
 	}
 	// .info__code

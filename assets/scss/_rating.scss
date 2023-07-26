@@ -29,17 +29,17 @@
 			height: 100%;
 			top: 0;
 			left: 0;
-			background: linear-gradient(to right, var(--color-gold) var(--active-fraction), var(--color-gray-light) var(--active-fraction));
+			background: linear-gradient(to right, #ffd700 var(--active-fraction), #cccccc var(--active-fraction));
 			clip-path: polygon(51% 0, 64% 36%, 100% 38%, 72% 62%, 81% 100%, 50% 79%, 19% 100%, 28% 62%, 0 38%, 37% 35%);
 		}
 		&._hover {
 			&::before {
-				background: var(--color-gold);
+				background: #ffd700;
 			}
 		}
 		&._unhover {
 			&::before {
-				background: var(--color-gray-light);
+				background: #cccccc;
 			}
 		}
 		&::after {

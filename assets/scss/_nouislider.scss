@@ -108,15 +108,15 @@
  * Giving the connect element a border radius causes issues with using transform: scale
  */
 .noUi-target {
-  background: var(--color-white);
+  background: #ffffff;
   border-radius: rem(4);
-  border: rem(1) solid var(--color-gray-lighter);
+  border: rem(1) solid #d8d8d8;
 }
 .noUi-connects {
   border-radius: 3px;
 }
 .noUi-connect {
-  background: var(--color-blue-light);
+  background: var(--color-main-light);
 }
 /* Handles and cursors;
  */
@@ -127,9 +127,9 @@
   cursor: ns-resize;
 }
 .noUi-handle {
-  border: rem(1) solid var(--color-gray-light);
+  border: rem(1) solid #cccccc;
   border-radius: 50%;
-  background: var(--color-white);
+  background: #ffffff;
   cursor: default;
 	transition: box-shadow 0.1s ease 0s;
 }

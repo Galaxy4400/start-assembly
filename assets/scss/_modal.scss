@@ -75,7 +75,7 @@ a[data-modal-opener] {
 			width: rem(15);
 			height: rem(15);
 			padding: rem(20);
-			color: var(--color-black);
+			color: #000000;
 			transition: all 0.3s ease 0s;
 			&:before,
 			&:after {
@@ -85,7 +85,7 @@ a[data-modal-opener] {
 				left: 50%;
 				width: rem(15);
 				height: rem(2);
-				background: var(--color-black);
+				background: #000000;
 				border-radius: rem(2);
 			}
 			&::before {
@@ -96,7 +96,7 @@ a[data-modal-opener] {
 			}
 			@media (any-hover: hover) {
 				&:hover {
-					color: var(--color-black);
+					color: #000000;
 				}
 			}
 		}

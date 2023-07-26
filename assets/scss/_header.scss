@@ -59,7 +59,7 @@
 		overflow-x: hidden;
 		max-width: rem(400);
 		width: 80%;
-		background: var(--color-white);
+		background: #ffffff;
 		box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 		transform: translateX(100%);
 		transition: transform 0.3s ease 0s;
@@ -76,7 +76,7 @@
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-blue);
+				color: var(--color-main);
 			}
 		}
 	}
@@ -95,7 +95,7 @@
 	&__link {
 		font-size: rem(18);
 		&._highlight {
-			color: var(--color-blue-dark);
+			color: var(--color-main-dark);
 			transition: all 0.1s ease 0s;
 		}
 	}
@@ -124,7 +124,7 @@
 		overflow-x: hidden;
 		max-width: rem(400);
 		width: 80%;
-		background: var(--color-white);
+		background: #ffffff;
 		box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 		transform: translateX(-100%);
 		transition: transform 0.3s ease 0s;
@@ -144,7 +144,7 @@
 				}
 				&::-webkit-scrollbar-thumb {
 					border-radius: px(5);
-					border: px(2) solid var(--color-white);
+					border: px(2) solid #ffffff;
 				}
 			}
 		}
@@ -164,7 +164,7 @@
 				right: rem(5);
 			}
 			&:hover {
-				color: var(--color-blue);
+				color: var(--color-main);
 			}
 		}
 	}
@@ -184,7 +184,7 @@
 	// .information-menu__link
 	&__link {
 		&._highlight {
-			color: var(--color-blue-dark);
+			color: var(--color-main-dark);
 			transition: all 0.1s ease 0s;
 		}
 	}
@@ -199,14 +199,14 @@
 			left: em(-16) !important;
 			width: em(4) !important;
 			height: em(4) !important;
-			background: var(--color-blue) !important;
+			background: var(--color-main) !important;
 		}
 	}
 	// .information-menu__sub-link
 	&__sub-link {
 		font-size: rem(15);
 		&._highlight {
-			color: var(--color-blue-dark);
+			color: var(--color-main-dark);
 			transition: all 0.1s ease 0s;
 		}
 	}
@@ -215,7 +215,7 @@
 // !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .main-menu {
-	background: var(--color-white);
+	background: #ffffff;
 	box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 	border-radius: em(4);
 	display: flex;
@@ -277,7 +277,7 @@
 			width: 100%;
 			justify-content: space-between;
 			position: static;
-			border-bottom: rem(1) solid var(--color-gray-lighter);
+			border-bottom: rem(1) solid #d8d8d8;
 		}
 	}
 	// .main-menu__link
@@ -287,7 +287,7 @@
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-blue-light);
+				color: var(--color-main-light);
 			}
 		}
 		@media (max-width: em($md3)) {
@@ -302,7 +302,7 @@
 		transition: all 0.3s ease 0s;
 		&._hover {
 			transform: scale(1, -1);
-			color: var(--color-blue-light);
+			color: var(--color-main-light);
 		}
 		@media (max-width: em($md3)) {
 			padding: rem(15);
@@ -315,8 +315,8 @@
 		flex-direction: column;
 		gap: rem(10);
 		z-index: 100;
-		background: var(--color-blue-light);
-		color: var(--color-white);
+		background: var(--color-main-light);
+		color: #ffffff;
 		padding: rem(10) 0;
 		border-radius: rem(10);
 		position: absolute;
@@ -328,9 +328,9 @@
 		@media (max-width: em($md3)) {
 			gap: rem(0);
 			padding: rem(10) rem(20);
-			background: var(--color-white);
+			background: #ffffff;
 			border-radius: 0;
-			color: var(--color-black);
+			color: #000000;
 		}
 		// .main-menu__sub-list_level-1
 		&_level-1 {
@@ -394,7 +394,7 @@
 		// .main-menu__sub-list_unique
 		&_unique {
 			width: 100%;
-			background: var(--color-white);
+			background: #ffffff;
 			min-height: rem(400);
 			border-radius: rem(20);
 			font-size: rem(30);
@@ -406,7 +406,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: var(--color-black);
+			color: #000000;
 			transform: translateY(rem(50));
 			box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 			&::before {
@@ -449,7 +449,7 @@
 		gap: rem(5);
 		padding: rem(0) rem(5) rem(0) rem(15);
 		@media (max-width: em($md3)) {
-			border-bottom: rem(1) solid (var(--color-gray-lighter));
+			border-bottom: rem(1) solid #d8d8d8;
 		}
 		// .main-menu__sub-item_back
 		&_back {
@@ -469,7 +469,7 @@
 		color: inherit;
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-darker);
+				color: #111111;
 			}
 		}
 		@media (max-width: em($md3)) {
@@ -479,14 +479,14 @@
 	}
 	// .main-menu__sub-arrow
 	&__sub-arrow {
-		color: var(--color-white);
+		color: #ffffff;
 		transform: rotate(-90deg);
 		transition: all 0.3s ease 0s;
 		&._hover {
-			color: var(--color-darker);
+			color: #111111;
 		}
 		@media (max-width: em($md3)) {
-			color: var(--color-black);
+			color: #000000;
 			padding: rem(15);
 		}
 		// .main-menu__sub-arrow_level-1
@@ -498,7 +498,7 @@
 // !!! СТИЛИ ДЕМОНСТРАЦИОННОГО ШАБЛОНА !!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .menu {
-	background: var(--color-white);
+	background: #ffffff;
 	box-shadow: 0px 0px rem(40) 0px rgba(34, 60, 80, 0.1);
 	border-radius: em(4);
 	display: flex;
@@ -582,7 +582,7 @@
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-blue-light);
+				color: var(--color-main-light);
 			}
 		}
 		@media (max-width: em($md3)) {
@@ -608,7 +608,7 @@
 		opacity: 0;
 		border-radius: rem(10);
 		padding: rem(15) rem(20);
-		background: var(--color-blue);
+		background: var(--color-main);
 		visibility: hidden;
 		transition: all 0.3s ease 0s;
 		transform: translate(0, rem(20));
@@ -629,7 +629,7 @@
 	// .simple-menu__btn
 	&__btn {
 		font-size: rem(16);
-		color: var(--color-white);
+		color: #ffffff;
 	}
 }
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
