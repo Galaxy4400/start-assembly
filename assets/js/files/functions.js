@@ -149,3 +149,16 @@ function isElementInViewport(element, strict = true) {
 		);
 	}
 }
+
+
+/**
+ * Возвращает значение GET параметра из URL по имени
+ * 
+ * @param {String} getParamName - имя параметра
+ * 
+ * @return {String} - значение параметра
+ */
+function getUrlGetParamByName(getParamName) {
+	const url = new URL(window.location.href);
+	return url.searchParams.get(getParamName);
+}
