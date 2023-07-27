@@ -481,6 +481,10 @@ document.querySelectorAll('[data-choice]').forEach((select) => {
 			English: 'No results found',
 			Russian: 'Ничего не найдено',
 		},
+		noChoicesText: {
+			English: 'No choices to chose form',
+			Russian: 'Вариантов для выбора больше нет',
+		},
 	};
 
 	// Подготовка переключателей валидации обычного селектора к переносу в choice
@@ -499,6 +503,7 @@ document.querySelectorAll('[data-choice]').forEach((select) => {
 		placeholderValue: select.getAttribute('placeholder'),
 		searchPlaceholderValue: (select.dataset.placeholder !== undefined) ? select.dataset.placeholder : '',
 		noResultsText: choicesLocalization.noResultsText[LOCALIZATION],
+		noChoicesText: choicesLocalization.noChoicesText[LOCALIZATION],
 		shouldSort: false,
 		itemSelectText: '',
 		removeItemButton: select.hasAttribute('multiple') ? true : false,
