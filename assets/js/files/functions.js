@@ -152,6 +152,19 @@ function isElementInViewport(element, strict = true) {
 
 
 /**
+ * Получение склонения слова по числу
+ * 
+ * @param {int} number - целое число
+ * @param {Array} words - массив слов трёх варриатнов. Например ['яблоко', 'яблока', 'яблок']
+ * 
+ * @return {String} - значение параметра
+ */
+function wordDeclFromNumber(number, words) {  
+	return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
+}
+
+
+/**
  * Возвращает значение GET параметра из URL по имени
  * 
  * @param {String} getParamName - имя параметра
