@@ -130,6 +130,8 @@ function highlightingAnchorLinks() {
 
 	if (!groups.length) return;
 
+	const offset = document.querySelector('._fixed').clientHeight;
+
 	// Функция снятия выделения со всех якорей
 	const unhighlightAll = (links) => {
 		links.forEach(link => link.classList.remove('_highlight'));
@@ -137,17 +139,20 @@ function highlightingAnchorLinks() {
 
 	// Функция выделения якоря ссылающегося на первый видимый элемент на экране
 	const highlightCurent = (links) => {
+		links = [...Object.values(links)].sort((a, b) => +a.dataset.gotoOrder > +b.dataset.gotoOrder ? 1 : -1);
+
 		const linkOfVisibleElement = Object.values(links).find(link => {
 			const anchor = link.dataset.goto;
 			const anchorElement = document.querySelector(`.${anchor}`);
 
-			if (isElementInViewport(anchorElement, false)) return true;
+			if (isElementInViewport(anchorElement, false, offset)) return true;
 		});
 
 		if (!linkOfVisibleElement) return;
 
 		linkOfVisibleElement.classList.add('_highlight');
 	};
+
 
 	// Функция выделения якорей в группе
 	const highlightingGroup = (group) => {

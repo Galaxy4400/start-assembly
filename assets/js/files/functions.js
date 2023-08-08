@@ -127,11 +127,14 @@ function scrollTo(target, offset = 0, focus = false) {
  * 
  * @param {Object} element - DOM элемент.
  * @param {Boolean} strict - строгий режим сравнения. По умолчанию включено.
+ * @param {offset} strict - смещение от верхнего края экрана
  * 
  * @return {Boolean}
  */
-function isElementInViewport(element, strict = true) {
+function isElementInViewport(element, strict = true, offset = 0) {
 	const elementRectangle = element.getBoundingClientRect();
+
+	if (offset) offset += 1;
 
 	if (strict) {
 		return (
@@ -144,7 +147,7 @@ function isElementInViewport(element, strict = true) {
 		return (
 			elementRectangle.top <= (window.innerHeight || document.documentElement.clientHeight) &&
 			elementRectangle.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-			elementRectangle.bottom >= 0 &&
+			elementRectangle.bottom >= offset &&
 			elementRectangle.right >= 0
 		);
 	}
