@@ -72,12 +72,19 @@ document.querySelectorAll('[data-link]').forEach(link => {
 /**
  * Функция плавного переход к элементу
  * 
- * @param {String, Object} target - класс элемента к которому нужно перей (без точки). Или сам объект.
+ * @param {String, Object} target - класс элемента к которому нужно перейти (без точки). Или сам объект.
  * @param {Number} offset - Отступ от блока, к которому производится переход (в пикселях)
  * @param {Boolean} focus - Если true, то после перехода будет произведён фокус на объекте, либо на ближайшем дочернем элементе, являющимся элементом формы.
  */
 function scrollTo(target, offset = 0, focus = false) {
-	const scrollTarget = (typeof target == 'object') ? target : document.querySelector(`.${target}`);
+	let scrollTarget;
+
+	try {
+		scrollTarget = (typeof target == 'object') ? target : document.querySelector(`.${target}`);
+	} catch (error) {
+		return;
+	}
+	
 	const elementPosition = scrollTarget.getBoundingClientRect().top;
 
 	const isLocked = document.body.classList.contains('_lock') ? true : false;
