@@ -139,20 +139,38 @@ function highlightingAnchorLinks() {
 
 	// Функция выделения якоря ссылающегося на первый видимый элемент на экране
 	const highlightCurent = (links) => {
-		links = [...Object.values(links)].sort((a, b) => +a.dataset.gotoOrder > +b.dataset.gotoOrder ? 1 : -1);
 
-		const linkOfVisibleElement = Object.values(links).find(link => {
+		let visibleAnchorAccordings = Object.values(links).map(link => {
 			const anchor = link.dataset.goto;
 			const anchorElement = document.querySelector(`.${anchor}`);
+			const according = {};
 
-			if (isElementInViewport(anchorElement, false, offset)) return true;
+			if (isElementInViewport(anchorElement, false, offset)) {
+				according.link = link;
+				according.block = anchorElement;
+				according.border = anchorElement.getBoundingClientRect().bottom;
+			}
+
+			return according;
 		});
 
-		if (!linkOfVisibleElement) return;
+		visibleAnchorAccordings = visibleAnchorAccordings.filter(according => Object.entries(according).length);
 
-		linkOfVisibleElement.classList.add('_highlight');
+		let topVisibleAnchorAccording = null;
+		visibleAnchorAccordings.forEach(according => {
+			if (!topVisibleAnchorAccording) {
+				topVisibleAnchorAccording = according;
+				return;
+			}
+			if (according.border < topVisibleAnchorAccording.border) {
+				topVisibleAnchorAccording = according;
+			}
+		});
+
+		if (!topVisibleAnchorAccording) return;
+
+		topVisibleAnchorAccording.link.classList.add('_highlight');
 	};
-
 
 	// Функция выделения якорей в группе
 	const highlightingGroup = (group) => {
