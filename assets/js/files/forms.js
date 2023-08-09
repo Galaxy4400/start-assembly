@@ -1311,7 +1311,7 @@ function doSubmitForm(form) {
 			break;
 
 		default:
-			form.submit();
+			HTMLFormElement.prototype.submit.call(form);
 			break;
 	}
 }
