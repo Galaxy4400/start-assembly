@@ -19,6 +19,10 @@ let lazyLoader;
  * Примеры: https://michalsnik.github.io/aos/
  */
 function initAOS() {
+	const animateElems = document.querySelectorAll('[data-aos]');
+
+	if (!animateElems.length) return;
+
 	AOS.init({
 		offset: 50,
 		duration: 1000,
@@ -39,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => setTimeout(initAOS, 1000));
  */
 function initLazyLoad() {
 	const lazyloadImages = document.querySelectorAll('img[data-src]');
+	
+	if (!lazyloadImages.length) return;
+	
 	lazyLoader = new LazyLoad(lazyloadImages);
 }
 document.addEventListener('DOMContentLoaded', () => initLazyLoad());
