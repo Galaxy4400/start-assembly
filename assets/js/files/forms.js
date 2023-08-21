@@ -549,7 +549,7 @@ document.querySelectorAll('[data-choice]').forEach((select) => {
  * 
  * Требуется подключение стилей: assets/scss/_datepicker.scss
  */
-document.querySelectorAll('[data-date]').forEach(input => {
+document.querySelectorAll('input[data-date]').forEach(input => {
 
 	let locale = false;
 
@@ -657,7 +657,7 @@ document.querySelectorAll('input[data-mask]').forEach(input => {
  * data-after="{function_name}" - функция, которая будет выполнена после получения ответа с сервера. (!)Название функции без (). В параметре функции будут доступны данные, которые вернул сервер.
  * data-autocomplete-off - удаляет функцию автозаполнения полей формы браузерами
  */
-document.querySelectorAll('[data-form]').forEach((form) => {
+document.querySelectorAll('form[data-form]').forEach((form) => {
 	autoComplete(form);
 	setRecaptcha(form);
 	validateForm(form);
