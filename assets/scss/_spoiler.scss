@@ -1,5 +1,5 @@
 ._spoiler._init {
-	--spoller-time: 0.3s;
+	--spoiler-time: 0.3s;
 	._spoiler-item {
 	}
 	._spoiler-control {
@@ -8,7 +8,7 @@
 		display: grid;
 		grid-template-rows: 0fr;
 		overflow: hidden;
-		transition: all var(--spoller-time) ease-out;
+		transition: all var(--spoiler-time) ease-out;
 		._spoiler-wrapper {
 			min-height: 0px;
 		}

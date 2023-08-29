@@ -33,7 +33,7 @@ class Spoiler {
 
 		this.elements = {};
 		
-		this.elements.spoiler = document.querySelector(`[data-spoiler="${selector}"]`);
+		this.elements.spoiler = typeof selector === 'object' ? selector : document.querySelector(`[data-spoiler="${selector}"]`);
 
 		if (!this.elements.spoiler) return;
 
