@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
 	if (document.querySelector(`[data-modal="${hash}"]`)) {
 		modal.openModal(hash);
 	}
-	
+
 	// Если на странице есть блок с таким классом, то осуществляется плавный переход к нему
 	if (document.querySelector(`.${hash}`)) {
 		scrollTo(hash);
@@ -138,7 +138,7 @@ function scrollTo(target, offset = 0, focus = false) {
  * 
  * @param {Object} element - DOM элемент.
  * @param {Boolean} strict - строгий режим сравнения. По умолчанию включено.
- * @param {offset} strict - смещение от верхнего края экрана
+ * @param {offset} offset - смещение от верхнего края экрана
  * 
  * @return {Boolean}
  */
