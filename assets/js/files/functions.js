@@ -138,7 +138,7 @@ function scrollTo(target, offset = 0, focus = false) {
  * 
  * @param {Object} element - DOM элемент.
  * @param {Boolean} strict - строгий режим сравнения. По умолчанию включено.
- * @param {offset} offset - смещение от верхнего края экрана
+ * @param {int} offset - смещение от верхнего края экрана
  * 
  * @return {Boolean}
  */
