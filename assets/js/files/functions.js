@@ -29,17 +29,19 @@ document.querySelectorAll('.menu-icon').forEach(menuIcon => {
 /**
  * События в зависимости от хеша в url
  */
-if (location.hash) {
-	const hash = location.hash.replace('#', '');
-	// Если на странице есть такое модальное окно, то открывает его
-	if (document.querySelector(`[data-modal="${hash}"]`)) {
-		modal.openModal(hash);
+document.addEventListener('DOMContentLoaded', function () {
+	if (location.hash) {
+		const hash = location.hash.replace('#', '');
+		// Если на странице есть такое модальное окно, то открывает его
+		if (document.querySelector(`[data-modal="${hash}"]`)) {
+			modal.openModal(hash);
+		}
+		// Если на странице есть блок с таким классом, то осуществляется плавный переход к нему
+		if (document.querySelector(`.${hash}`)) {
+			scrollTo(hash);
+		}
 	}
-	// Если на странице есть блок с таким классом, то осуществляется плавный переход к нему
-	if (document.querySelector(`.${hash}`)) {
-		scrollTo(hash);
-	}
-}
+});
 
 
 /**
