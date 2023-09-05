@@ -46,7 +46,7 @@ document.querySelectorAll('input[data-radio]').forEach(radio => {
 	}
 
 	if (!isCustom) {
-		radioLabel.innerText = radio.dataset.label;
+		radioLabel.innerHTML = radio.dataset.label;
 		radioLabel.className = 'radio__mark';
 	}
 	
@@ -102,7 +102,7 @@ document.querySelectorAll('input[data-check]').forEach(check => {
 	}
 
 	if (!isCustom) {
-		checkLabel.innerText = check.dataset.label;
+		checkLabel.innerHTML = check.dataset.label;
 		checkLabel.className = 'check__mark';
 	}
 	if (check.checked) checkContainer.classList.add('_checked');
