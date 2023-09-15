@@ -35,7 +35,7 @@ class Tabs {
 
 		this.options = Object.assign(defaultOptions, options);
 		this.selector = selector;
-		this.elements.tabs = document.querySelector(`[data-tabs="${this.selector}"]`);
+		this.elements.tabs = typeof selector === 'object' ? selector : document.querySelector(`[data-tabs="${selector}"]`);
 
 		if (!this.elements.tabs) return;
 
