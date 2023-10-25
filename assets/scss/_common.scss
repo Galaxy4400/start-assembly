@@ -217,6 +217,7 @@ body {
 
 // Основной блок
 .page {
+	min-width: 0;
 	// .page__section
 	&__section {
 		margin: 0px 0px rem(100) 0px;
