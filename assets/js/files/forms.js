@@ -651,6 +651,7 @@ document.querySelectorAll('input[data-mask]').forEach(input => {
  * 
  * Помимо прочих обязательных атрибутов, элемену формы можно также задать:
  * data-send="{test|ajax}" - отправка формы без перезагрузки страницы.
+ * data-validation - если установлен, то форма будет валидироваться.
  * data-send="test" - тестовая отправка формы. Данные никуда не отправляются. После сабмита открывается модальное окно с атрибутом data-modal="form-sended". См. modal.js
  * data-send="ajax" - ассинхронная отправка формы в соответствии с установками. После положительного ответа с сервера открывается модальное окно с атрибутом data-modal="form-sended". См. modal.js
  * data-before="{function_name}" - функция, которая будет выполнена перед отправкой формы. (!)Название функции без (). Если функция вернёт false, форма отправлена не будет.
@@ -774,6 +775,7 @@ function validateForm(form) {
 		const rules = getFieldRules(field, form);
 		const config = getFieldConfig(field);
 
+		if (form.dataset.validation === undefined) return;
 		if (rules.length) {
 			field.setAttribute('data-validating', '');
 			validator.addField(field, rules, config);
@@ -787,6 +789,7 @@ function validateForm(form) {
 
 		const config = getFieldConfig(group);
 
+		if (form.dataset.validation === undefined) return;
 		validator.addRequiredGroup(group, 'You should select at least one communication channel', config);
 	};
 
@@ -1296,7 +1299,7 @@ function doSubmitForm(form) {
 	const afterSubmit = form.dataset.after;
 
 	// Выполнение функции до отправки формы
-	if (beforeSubmit && !window[beforeSubmit]()) return;
+	if (beforeSubmit && !window[beforeSubmit].call(null, form)) return;
 
 	// Отправка формы
 	switch (sendForm) {
@@ -1305,7 +1308,6 @@ function doSubmitForm(form) {
 			break;
 
 		case 'test':
-			modal.openModal('form-sended');
 			if (afterSubmit) window[afterSubmit]();
 			alert('Форма отправлена');
 			break;
@@ -1339,8 +1341,7 @@ function submitByAjax(form, afterSubmit = false) {
 	.then(response => response.json())
 	.then(data => {
 		// Выполнение функции после отправки формы
-		if (afterSubmit) window[afterSubmit].call(null, data);
-		modal.openModal('form-sended');
+		if (afterSubmit) window[afterSubmit].call(null, form, data);
 	})
 	.catch(error => console.log(error.message));
 }
