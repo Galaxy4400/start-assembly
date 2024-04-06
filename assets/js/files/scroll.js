@@ -137,6 +137,8 @@ function highlightingAnchorLinks() {
 
 	if (!groups.length) return;
 
+	const offset = document.querySelector('._fixed')?.clientHeight;
+
 	// Функция снятия выделения со всех якорей
 	const unhighlightAll = (links) => {
 		links.forEach(link => link.classList.remove('_highlight'));
