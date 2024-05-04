@@ -1,6 +1,14 @@
 @font-face {
+	font-family: "icons-system";
+	src: url("../fonts/system-icons/icons-system.ttf") format("truetype"), url("../fonts/system-icons/icons-system.woff") format("woff"),
+		url("../fonts/system-icons/icons-system.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
 	font-family: "icons";
-	font-display: swap;
 	src: url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.woff") format("woff"),
 		url("../fonts/icons.svg") format("svg");
 	font-weight: normal;
@@ -9,7 +17,6 @@
 }
 
 %ic {
-	font-family: "icons";
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -19,12 +26,20 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-[class^="_icon-"],
-[class*=" _icon-"] {
+
+[class^="_system-icon"],
+[class*=" _system-icon"] {
 	&:before {
+		font-family: "icons-system";
 		@extend %ic;
 	}
 }
 
+[class^="_icon-"],
+[class*=" _icon-"] {
+	&:before {
+		font-family: "icons";
+		@extend %ic;
+	}
+}
 
-// Классы иконок
