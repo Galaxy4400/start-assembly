@@ -1299,7 +1299,7 @@ function doSubmitForm(form) {
 	const afterSubmit = form.dataset.after;
 
 	// Выполнение функции до отправки формы
-	if (beforeSubmit && !window[beforeSubmit].call(null, form)) return;
+	if (beforeSubmit && !window[beforeSubmit].call(form)) return;
 
 	// Отправка формы
 	switch (sendForm) {
@@ -1308,7 +1308,7 @@ function doSubmitForm(form) {
 			break;
 
 		case 'test':
-			if (afterSubmit) window[afterSubmit]();
+		if (afterSubmit) window[afterSubmit].call(form);
 			alert('Форма отправлена');
 			break;
 
@@ -1341,7 +1341,7 @@ function submitByAjax(form, afterSubmit = false) {
 	.then(response => response.json())
 	.then(data => {
 		// Выполнение функции после отправки формы
-		if (afterSubmit) window[afterSubmit].call(null, form, data);
+		if (afterSubmit) window[afterSubmit].call(form, data);
 	})
 	.catch(error => console.log(error.message));
 }
