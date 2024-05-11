@@ -1330,6 +1330,8 @@ function doSubmitForm(form) {
 function submitByAjax(form, afterSubmit = false) {
 	const formAction = form.action ? form.getAttribute('action').trim() : '#';
 	const formMethod = form.method ? form.getAttribute('method').trim() : 'GET';
+	
+	formLoading(form);
 
 	const formData = new FormData(form);
 	formData.append('ajax', true);
@@ -1343,7 +1345,10 @@ function submitByAjax(form, afterSubmit = false) {
 		// Выполнение функции после отправки формы
 		if (afterSubmit) window[afterSubmit].call(form, data);
 	})
-	.catch(error => console.log(error.message));
+	.catch(error => console.log(error.message))
+	.finally(() => {
+		formUnloading(form);
+	});
 }
 
 
@@ -1448,4 +1453,20 @@ function getValidatorLocalizations() {
 			},
 		},
 	];
+}
+
+
+//===============================================================
+function formLoading(form) {
+	form.classList.add('_sending');
+}
+
+//===============================================================
+function formUnloading(form) {
+	form.classList.remove('_sending');
+}
+
+//===============================================================
+function openSendedModal() {
+	modal.openModal('modal-form-sended');
 }
