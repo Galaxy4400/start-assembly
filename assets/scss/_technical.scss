@@ -137,3 +137,13 @@
 ._hide {
 	display: none;
 }
+
+/**
+ * Ограничение строк текста в блоке
+ */
+._webkit-box {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--max-lines);
+	overflow: hidden;
+}
